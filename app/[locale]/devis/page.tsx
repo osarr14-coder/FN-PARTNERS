@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/container";
+import { DossierTag } from "@/components/dossier-tag";
 import { QuoteForm } from "@/components/quote-form";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -19,7 +20,10 @@ export default async function QuotePage({ params }: { params: Promise<{ locale: 
   return (
     <section className="py-20 sm:py-28">
       <Container className="mx-auto max-w-3xl">
-        <h1 className="text-balance font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">{t("title")}</h1>
+        <DossierTag>{t("formEyebrow")}</DossierTag>
+        <h1 className="mt-1.5 text-balance font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">
+          {t("title")}
+        </h1>
         <p className="mt-3 text-slate-600">{t("subtitle")}</p>
 
         <div className="mt-12">

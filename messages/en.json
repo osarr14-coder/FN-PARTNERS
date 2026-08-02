@@ -66,7 +66,11 @@
   },
   "sectors": {
     "title": "Sectors",
-    "subtitle": "Our teams work with companies and groups across a range of sectors."
+    "subtitle": "Seven sectors of activity, one same method: our three areas of expertise apply regardless of your field.",
+    "sectorLabel": "Sector",
+    "polesTitle": "Areas of expertise available",
+    "sectorIntro": "Our teams support companies in the \"{sector}\" sector with the same three areas of expertise as across all our engagements.",
+    "otherSectorIntro": "Don't see your sector listed? Our three areas of expertise adapt to any type of organization — tell us about your context."
   },
   "contact": {
     "title": "Contact",
@@ -80,6 +84,7 @@
   "devis": {
     "title": "Request a quote",
     "subtitle": "Tell us about your need — our team gets back to you within 48 business hours.",
+    "formEyebrow": "New file",
     "sectionContact": "Your contact details",
     "sectionCompany": "Your company",
     "sectionProject": "Your project",

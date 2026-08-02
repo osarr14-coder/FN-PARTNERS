@@ -66,7 +66,11 @@
   },
   "sectors": {
     "title": "Secteurs d'activité",
-    "subtitle": "Nos équipes interviennent auprès d'entreprises et de groupes de secteurs variés."
+    "subtitle": "Sept secteurs d'intervention, une même méthode : nos trois pôles d'expertise s'appliquent quel que soit votre domaine d'activité.",
+    "sectorLabel": "Secteur",
+    "polesTitle": "Pôles mobilisables",
+    "sectorIntro": "Nos équipes accompagnent les entreprises du secteur « {sector} » avec les mêmes trois pôles d'expertise que sur l'ensemble de nos missions.",
+    "otherSectorIntro": "Votre secteur n'apparaît pas dans cette liste ? Nos trois pôles d'expertise s'adaptent à tout type d'organisation — décrivez-nous votre contexte."
   },
   "contact": {
     "title": "Contact",
@@ -80,6 +84,7 @@
   "devis": {
     "title": "Demande de devis",
     "subtitle": "Décrivez votre besoin, notre équipe revient vers vous sous 48h ouvrées.",
+    "formEyebrow": "Nouveau dossier",
     "sectionContact": "Vos coordonnées",
     "sectionCompany": "Votre société",
     "sectionProject": "Votre projet",

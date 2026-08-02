@@ -8,6 +8,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { Paperclip, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/button";
+import { DossierTag, cutCorner } from "@/components/dossier-tag";
 import { RecaptchaScript } from "@/components/recaptcha-script";
 import { getRecaptchaToken } from "@/lib/get-recaptcha-token";
 import { quoteRequestSchema, type QuoteRequestInput } from "@/lib/validations/quote";
@@ -24,6 +25,15 @@ import {
 
 const inputClass =
   "w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-ink-950 placeholder:text-slate-400 focus:border-ink-700 focus:outline-none focus:ring-1 focus:ring-ink-700";
+
+function SectionHeader({ n, title }: { n: number; title: string }) {
+  return (
+    <div className="flex items-baseline gap-3">
+      <DossierTag>{String(n).padStart(2, "0")}</DossierTag>
+      <h2 className="font-heading text-lg font-semibold text-ink-950">{title}</h2>
+    </div>
+  );
+}
 
 function Field({
   label,
@@ -133,8 +143,8 @@ export function QuoteForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-12" noValidate>
       <input type="hidden" {...register("locale")} />
 
-      <div>
-        <h2 className="font-heading text-lg font-semibold text-ink-950">{t("sectionContact")}</h2>
+      <div className={`border border-slate-200 bg-white p-6 sm:p-8 ${cutCorner}`}>
+        <SectionHeader n={1} title={t("sectionContact")} />
         <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
           <Field label={t("fullName")} htmlFor="fullName" error={errors.fullName?.message}>
             <input id="fullName" className={inputClass} {...register("fullName")} />
@@ -151,8 +161,8 @@ export function QuoteForm() {
         </div>
       </div>
 
-      <div>
-        <h2 className="font-heading text-lg font-semibold text-ink-950">{t("sectionCompany")}</h2>
+      <div className={`border border-slate-200 bg-white p-6 sm:p-8 ${cutCorner}`}>
+        <SectionHeader n={2} title={t("sectionCompany")} />
         <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
           <Field label={t("company")} htmlFor="company" error={errors.company?.message}>
             <input id="company" className={inputClass} {...register("company")} />
@@ -205,8 +215,8 @@ export function QuoteForm() {
         </div>
       </div>
 
-      <div>
-        <h2 className="font-heading text-lg font-semibold text-ink-950">{t("sectionProject")}</h2>
+      <div className={`border border-slate-200 bg-white p-6 sm:p-8 ${cutCorner}`}>
+        <SectionHeader n={3} title={t("sectionProject")} />
         <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
           <Field label={t("servicePole")} htmlFor="servicePole" error={errors.servicePole?.message}>
             <select id="servicePole" className={inputClass} defaultValue="" {...register("servicePole")}>
@@ -258,8 +268,8 @@ export function QuoteForm() {
         </div>
       </div>
 
-      <div>
-        <h2 className="font-heading text-lg font-semibold text-ink-950">{t("sectionAttachments")}</h2>
+      <div className={`border border-slate-200 bg-white p-6 sm:p-8 ${cutCorner}`}>
+        <SectionHeader n={4} title={t("sectionAttachments")} />
         <p className="mt-1.5 text-xs text-slate-500">{t("attachmentsHint")}</p>
         <label
           htmlFor="attachments"

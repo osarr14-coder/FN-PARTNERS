@@ -86,9 +86,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               className="h-28 w-28 shrink-0 rounded-full object-cover ring-4 ring-accent-50 sm:h-32 sm:w-32"
             />
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-accent-600">
-                {t("founderEyebrow")}
-              </p>
+              <DossierTag>{t("founderEyebrow")}</DossierTag>
               <h2 className="mt-1.5 text-balance font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">
                 {founder.name}
               </h2>
@@ -100,25 +98,25 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
               {t("founderExperienceTitle")}
             </p>
-            <ol className="mt-6 space-y-8 border-l border-slate-200 pl-8">
-              {founder.experience.map((role) => (
-                <li key={role.organization} className="relative">
-                  <span className="absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full bg-accent-500" />
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 className="font-heading text-base font-semibold text-ink-950">{role.organization}</h3>
-                    <span className="text-sm text-slate-500">{role.duration[locale]}</span>
+            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
+              {founder.experience.map((role, i) => (
+                <div key={role.organization} className={`border border-slate-200 bg-white p-6 ${cutCorner}`}>
+                  <div className="flex items-baseline justify-between gap-3">
+                    <DossierTag>{String(i + 1).padStart(2, "0")}</DossierTag>
+                    <span className="font-mono text-xs text-slate-400">{role.duration[locale]}</span>
                   </div>
-                  <ul className="mt-2.5 space-y-1.5">
+                  <h3 className="mt-2 font-heading text-lg font-semibold text-ink-950">{role.organization}</h3>
+                  <ul className="mt-3 space-y-1.5">
                     {role.highlights.map((h) => (
                       <li key={h[locale]} className="flex gap-2.5 text-sm leading-relaxed text-slate-600">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-slate-300" />
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-500" />
                         {h[locale]}
                       </li>
                     ))}
                   </ul>
-                </li>
+                </div>
               ))}
-            </ol>
+            </div>
           </div>
         </Container>
       </section>
