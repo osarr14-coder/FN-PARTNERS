@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  /* Violet profond — couleur de marque réelle de FN Partners, reprise des
+     plaquettes commerciales (dominante #9900FF / #5C299A dans les documents FR
+     et EN). Remplace le bleu marine générique choisi avant lecture des sources. */
+  --color-ink-950: #1f0d3d;
+  --color-ink-900: #2d1454;
+  --color-ink-800: #3d1a70;
+  --color-ink-700: #5c299a;
+  --color-ink-600: #7300bf;
+
+  /* Gris neutres à légère dominante violette, cohérents avec l'accent */
+  --color-slate-50: #f8f6fb;
+  --color-slate-100: #f0ecf7;
+  --color-slate-200: #dfd7ec;
+  --color-slate-400: #9c8fb3;
+  --color-slate-600: #5f5470;
+  --color-slate-800: #332b42;
+
+  /* Violet vif — couleur d'accent principale, valeur exacte des plaquettes (#9900FF) */
+  --color-accent-500: #9900ff;
+  --color-accent-600: #7c00d1;
+  --color-accent-50: #f0e0ff;
+
+  --background: #ffffff;
+  --foreground: var(--color-ink-950);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-ink-950: var(--color-ink-950);
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-700: var(--color-ink-700);
+  --color-ink-600: var(--color-ink-600);
+
+  --color-slate-50: var(--color-slate-50);
+  --color-slate-100: var(--color-slate-100);
+  --color-slate-200: var(--color-slate-200);
+  --color-slate-400: var(--color-slate-400);
+  --color-slate-600: var(--color-slate-600);
+  --color-slate-800: var(--color-slate-800);
+
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+/* Dossier explorer (page /services) — bascule d'onglets en CSS pur (radios
+   masqués + :has()), pas de JS nécessaire, compatible rendu statique. Les 3
+   pôles sont fixes, d'où les sélecteurs codés en dur plutôt qu'une abstraction
+   générique pour un cas à 3 éléments connus. */
+.dossier-explorer > input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.dossier-explorer:has(#pole-cf:checked) label[for="pole-cf"],
+.dossier-explorer:has(#pole-ar:checked) label[for="pole-ar"],
+.dossier-explorer:has(#pole-mo:checked) label[for="pole-mo"] {
+  background: var(--color-accent-50);
+  border-color: var(--color-accent-500);
+}
+.dossier-explorer:has(#pole-cf:checked) label[for="pole-cf"] .dossier-code,
+.dossier-explorer:has(#pole-ar:checked) label[for="pole-ar"] .dossier-code,
+.dossier-explorer:has(#pole-mo:checked) label[for="pole-mo"] .dossier-code {
+  color: var(--color-accent-600);
+}
+.dossier-explorer:has(#pole-cf:focus-visible) label[for="pole-cf"],
+.dossier-explorer:has(#pole-ar:focus-visible) label[for="pole-ar"],
+.dossier-explorer:has(#pole-mo:focus-visible) label[for="pole-mo"] {
+  outline: 2px solid var(--color-accent-500);
+  outline-offset: 2px;
+}
+
+.dossier-panel { display: none; }
+#pole-cf:checked ~ .dossier-panels #panel-cf,
+#pole-ar:checked ~ .dossier-panels #panel-ar,
+#pole-mo:checked ~ .dossier-panels #panel-mo {
+  display: block;
+}

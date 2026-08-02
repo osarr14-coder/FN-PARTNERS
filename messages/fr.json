@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Nos services",
+    "sectors": "Secteurs d'activité",
+    "news": "Actualités",
+    "contact": "Contact",
+    "quote": "Demander un devis"
+  },
+  "footer": {
+    "tagline": "Conseil dans les métiers de l'expertise comptable et de la finance",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "rights": "Tous droits réservés."
+  },
+  "common": {
+    "readMore": "En savoir plus",
+    "requestQuote": "Demander un devis",
+    "callBack": "Être rappelé",
+    "contactExpert": "Contacter un expert",
+    "bookMeeting": "Prendre rendez-vous"
+  },
+  "home": {
+    "heroEyebrow": "Cabinet de conseil — Casablanca, Maroc",
+    "heroLead": "Un partenaire de confiance pour les dirigeants d'entreprises et de groupes marocains, de l'étude des investissements au transfert de savoir-faire à vos équipes.",
+    "strengthsTitle": "Nos atouts",
+    "strengthsSubtitle": "Ce qui distingue notre accompagnement.",
+    "servicesTitle": "Nos pôles d'expertise",
+    "servicesSubtitle": "Trois domaines d'intervention, une même exigence de rigueur.",
+    "servicesCta": "Voir tous les services",
+    "referencesTitle": "Ils nous font confiance",
+    "referencesSubtitle": "Un aperçu des missions menées auprès de groupes marocains de premier plan.",
+    "geographyTitle": "Une présence multi-pays",
+    "geographySubtitle": "Des missions menées au Maroc et au-delà.",
+    "ctaTitle": "Parlons de votre projet",
+    "ctaSubtitle": "Un premier échange pour cerner vos besoins, sans engagement."
+  },
+  "about": {
+    "title": "À propos de FN Partners",
+    "leadEyebrow": "Qui sommes-nous",
+    "valuesTitle": "Nos valeurs",
+    "valuesSubtitle": "Les principes qui guident chacune de nos missions.",
+    "founderEyebrow": "La fondatrice",
+    "founderExperienceTitle": "Parcours professionnel",
+    "geographyTitle": "Zones d'intervention"
+  },
+  "services": {
+    "title": "Nos services",
+    "subtitle": "Trois pôles d'expertise au service de vos enjeux comptables et financiers.",
+    "itemsTitle": "Domaines d'intervention",
+    "benefitsTitle": "Ce que cela vous apporte",
+    "processTitle": "Notre méthode",
+    "faqTitle": "Questions fréquentes",
+    "otherServicesTitle": "Nos autres pôles d'expertise",
+    "ctaTitle": "Un projet dans ce domaine ?",
+    "ctaSubtitle": "Décrivez-nous votre besoin, nous revenons vers vous rapidement.",
+    "dossierLabel": "Dossier",
+    "viewFullSheet": "Voir la fiche complète"
+  },
+  "sectors": {
+    "title": "Secteurs d'activité",
+    "subtitle": "Nos équipes interviennent auprès d'entreprises et de groupes de secteurs variés."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Une question, un projet ? Notre équipe vous répond rapidement.",
+    "addressLabel": "Adresse",
+    "phoneLabel": "Téléphone",
+    "emailLabel": "Email",
+    "quoteTitle": "Un projet précis en tête ?",
+    "quoteSubtitle": "Décrivez votre besoin dans notre formulaire de demande de devis pour une réponse ciblée."
+  },
+  "devis": {
+    "title": "Demande de devis",
+    "subtitle": "Décrivez votre besoin, notre équipe revient vers vous sous 48h ouvrées.",
+    "sectionContact": "Vos coordonnées",
+    "sectionCompany": "Votre société",
+    "sectionProject": "Votre projet",
+    "sectionAttachments": "Pièces jointes",
+    "fullName": "Nom complet",
+    "email": "Email professionnel",
+    "phone": "Téléphone",
+    "company": "Raison sociale",
+    "role": "Fonction",
+    "sector": "Secteur d'activité",
+    "servicePole": "Pôle concerné",
+    "revenueRange": "Chiffre d'affaires annuel",
+    "headcountRange": "Effectif",
+    "location": "Ville / pays",
+    "urgency": "Urgence du besoin",
+    "budgetRange": "Budget estimatif",
+    "message": "Décrivez votre besoin",
+    "messagePlaceholder": "Contexte, objectifs, échéances…",
+    "attachmentsHint": "PDF, Word, Excel, images — 5 fichiers maximum, 10 Mo par fichier.",
+    "attachmentsCta": "Ajouter des fichiers",
+    "selectPlaceholder": "Sélectionner…",
+    "optional": "(optionnel)",
+    "consent": "J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la",
+    "privacyLink": "politique de confidentialité",
+    "submit": "Envoyer ma demande",
+    "submitting": "Envoi en cours…",
+    "errorGeneric": "Une erreur est survenue, merci de réessayer ou de nous contacter directement.",
+    "errorServiceNotConfigured": "Le service de demande en ligne n'est pas encore actif. Merci de nous contacter directement par téléphone ou email.",
+    "errorAttachmentTooLarge": "Le fichier {name} dépasse 10 Mo.",
+    "errorAttachmentType": "Le fichier {name} n'est pas dans un format accepté.",
+    "errorTooManyAttachments": "5 fichiers maximum.",
+    "errorRecaptcha": "La vérification anti-spam a échoué. Merci de réessayer.",
+    "recaptchaNotice": "Ce site est protégé par reCAPTCHA. La <privacy>politique de confidentialité</privacy> et les <terms>conditions d'utilisation</terms> de Google s'appliquent.",
+    "thankYouTitle": "Votre demande a bien été envoyée",
+    "thankYouReference": "Numéro de référence",
+    "thankYouBody": "Un membre de notre équipe reviendra vers vous très prochainement. Un email de confirmation vous a été envoyé.",
+    "backHome": "Retour à l'accueil"
+  },
+  "news": {
+    "title": "Actualités",
+    "subtitle": "Analyses, actualités réglementaires et retours d'expérience de notre équipe.",
+    "empty": "Aucun article publié pour le moment.",
+    "publishedOn": "Publié le",
+    "backToList": "Retour aux actualités"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "subtitle": "Comment FN Partners collecte, utilise et protège vos données à caractère personnel.",
+    "lastUpdated": "Dernière mise à jour : août 2026"
+  },
+  "cookieConsent": {
+    "message": "Nous utilisons des cookies techniques nécessaires au fonctionnement du site, ainsi que des cookies de protection anti-spam (reCAPTCHA) sur notre formulaire de devis.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "learnMore": "En savoir plus"
+  }
+}
