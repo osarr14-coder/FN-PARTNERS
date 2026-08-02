@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Award, Database, GraduationCap, Landmark, Layers3, Settings2, ShieldCheck, TrendingUp, Users2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -54,38 +53,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
     <>
       <JsonLd data={organizationJsonLd} />
       <section className="relative overflow-hidden bg-ink-950">
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
-        <Container className="relative grid grid-cols-1 items-center gap-12 py-24 sm:py-32 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-accent-500">{t("heroEyebrow")}</p>
-            <h1 className="mt-4 text-balance font-heading text-4xl font-semibold text-white sm:text-5xl">
-              {company.tagline[locale]}
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">{t("heroLead")}</p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <ButtonLink href="/devis" variant="accent">
-                {tc("requestQuote")}
-              </ButtonLink>
-              <ButtonLink href="/contact" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                {tc("contactExpert")}
-              </ButtonLink>
-            </div>
+        <ChevronMotif />
+        <Container className="relative py-16 sm:py-20">
+          <DossierTag light>{t("heroEyebrow")}</DossierTag>
+          <h1 className="mt-3 max-w-2xl text-balance font-heading text-4xl font-semibold text-white sm:text-5xl">
+            {company.tagline[locale]}
+          </h1>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">{t("heroLead")}</p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <ButtonLink href="/devis" variant="accent">
+              {tc("requestQuote")}
+            </ButtonLink>
+            <ButtonLink href="/contact" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+              {tc("contactExpert")}
+            </ButtonLink>
           </div>
-          <Image
-            src="/images/hero-corporate-finance.jpg"
-            alt=""
-            width={1024}
-            height={420}
-            priority
-            className="w-full rounded-2xl shadow-2xl ring-1 ring-white/10"
-          />
         </Container>
       </section>
 
