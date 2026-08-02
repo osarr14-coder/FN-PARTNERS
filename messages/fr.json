@@ -45,7 +45,11 @@
     "valuesSubtitle": "Les principes qui guident chacune de nos missions.",
     "founderEyebrow": "La fondatrice",
     "founderExperienceTitle": "Parcours professionnel",
-    "geographyTitle": "Zones d'intervention"
+    "geographyTitle": "Zones d'intervention",
+    "factYears": "ans",
+    "factExperienceLabel": "d'expérience professionnelle cumulée",
+    "factPolesLabel": "pôles d'expertise dédiés",
+    "factCountriesLabel": "pays de missions réalisées"
   },
   "services": {
     "title": "Nos services",

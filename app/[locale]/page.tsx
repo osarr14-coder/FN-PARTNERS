@@ -7,12 +7,15 @@ import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { ButtonLink } from "@/components/button";
 import { JsonLd } from "@/components/json-ld";
+import { ChevronMotif } from "@/components/chevron-motif";
+import { DossierTag, cutCorner } from "@/components/dossier-tag";
 import { company, contact, geography, references, servicePoles, strengths } from "@/content/company";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata, siteUrl } from "@/lib/seo";
 
 const strengthIcons = [Award, Users2, Database, GraduationCap, TrendingUp, Layers3];
 const poleIcons = [Landmark, ShieldCheck, Settings2];
+const poleCodes = ["CF", "AR", "MO"];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -93,8 +96,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
             {strengths.map((item, i) => {
               const Icon = strengthIcons[i];
               return (
-                <div key={item.title[locale]} className="rounded-2xl border border-slate-200 p-6">
-                  <Icon className="text-accent-600" size={28} strokeWidth={1.5} />
+                <div key={item.title[locale]} className={`border border-slate-200 bg-white p-6 ${cutCorner}`}>
+                  <div className="flex items-start justify-between gap-3">
+                    <Icon className="text-accent-600" size={28} strokeWidth={1.5} />
+                    <DossierTag>{String(i + 1).padStart(2, "0")}</DossierTag>
+                  </div>
                   <h3 className="mt-4 font-heading text-lg font-semibold text-ink-950">{item.title[locale]}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description[locale]}</p>
                 </div>
@@ -119,9 +125,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                 <Link
                   key={pole.slug}
                   href={`/services/${pole.slug}`}
-                  className="group flex flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-ink-900/20"
+                  className={`group flex flex-col border border-slate-200 bg-white p-8 shadow-sm transition-all hover:shadow-md hover:border-ink-900/20 ${cutCorner}`}
                 >
-                  <Icon className="text-ink-800" size={30} strokeWidth={1.5} />
+                  <div className="flex items-start justify-between gap-3">
+                    <Icon className="text-ink-800" size={30} strokeWidth={1.5} />
+                    <DossierTag>Dossier · {poleCodes[i]}</DossierTag>
+                  </div>
                   <h3 className="mt-5 font-heading text-xl font-semibold text-ink-950">{pole.name[locale]}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">{pole.summary[locale]}</p>
                   <ul className="mt-5 space-y-2 text-sm text-slate-600">
@@ -146,9 +155,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         <Container>
           <SectionHeading eyebrow="Track record" title={t("referencesTitle")} subtitle={t("referencesSubtitle")} />
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {references.map((ref) => (
-              <div key={ref.name} className="rounded-2xl border border-slate-200 p-6">
-                <p className="font-heading text-base font-semibold text-ink-950">{ref.name}</p>
+            {references.map((ref, i) => (
+              <div key={ref.name} className={`border border-slate-200 bg-white p-6 ${cutCorner}`}>
+                <DossierTag>Réf · {String(i + 1).padStart(2, "0")}</DossierTag>
+                <p className="mt-2 font-heading text-base font-semibold text-ink-950">{ref.name}</p>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
                   {ref.missions.slice(0, 2).map((mission) => (
                     <li key={mission[locale]}>{mission[locale]}</li>
@@ -160,8 +170,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         </Container>
       </section>
 
-      <section className="bg-ink-950 py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden bg-ink-950 py-20 sm:py-28">
+        <ChevronMotif />
+        <Container className="relative">
           <SectionHeading eyebrow="International" title={t("geographyTitle")} subtitle={t("geographySubtitle")} light />
           <div className="mt-8 flex flex-wrap gap-3">
             {geography.map((country) => (

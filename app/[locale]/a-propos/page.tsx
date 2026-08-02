@@ -4,7 +4,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { ButtonLink } from "@/components/button";
-import { company, founder, geography, values } from "@/content/company";
+import { ChevronMotif } from "@/components/chevron-motif";
+import { DossierTag, cutCorner } from "@/components/dossier-tag";
+import { company, founder, geography, servicePoles, values } from "@/content/company";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 
@@ -23,9 +25,31 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   return (
     <>
       <section className="py-20 sm:py-28">
-        <Container>
-          <SectionHeading eyebrow={t("leadEyebrow")} title={t("title")} />
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">{company.about[locale]}</p>
+        <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-start">
+          <div>
+            <SectionHeading eyebrow={t("leadEyebrow")} title={t("title")} />
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">{company.about[locale]}</p>
+          </div>
+
+          <div className={`border border-slate-200 bg-white p-7 ${cutCorner}`}>
+            <DossierTag>Dossier · FN</DossierTag>
+            <dl className="mt-5 space-y-6">
+              <div>
+                <dt className="font-heading text-3xl font-semibold text-ink-950">
+                  20 <span className="text-lg font-medium text-slate-500">{t("factYears")}</span>
+                </dt>
+                <dd className="mt-1 text-sm text-slate-600">{t("factExperienceLabel")}</dd>
+              </div>
+              <div>
+                <dt className="font-heading text-3xl font-semibold text-ink-950">{servicePoles.length}</dt>
+                <dd className="mt-1 text-sm text-slate-600">{t("factPolesLabel")}</dd>
+              </div>
+              <div>
+                <dt className="font-heading text-3xl font-semibold text-ink-950">{geography.length}</dt>
+                <dd className="mt-1 text-sm text-slate-600">{t("factCountriesLabel")}</dd>
+              </div>
+            </dl>
+          </div>
         </Container>
       </section>
 
@@ -33,9 +57,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <Container>
           <SectionHeading eyebrow={company.name} title={t("valuesTitle")} subtitle={t("valuesSubtitle")} />
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
-            {values.map((value) => (
-              <div key={value.title[locale]} className="rounded-2xl bg-white p-7 ring-1 ring-slate-200">
-                <h3 className="font-heading text-lg font-semibold text-ink-950">{value.title[locale]}</h3>
+            {values.map((value, i) => (
+              <div key={value.title[locale]} className={`border border-slate-200 bg-white p-7 ${cutCorner}`}>
+                <DossierTag>Valeur · {String(i + 1).padStart(2, "0")}</DossierTag>
+                <h3 className="mt-3 font-heading text-lg font-semibold text-ink-950">{value.title[locale]}</h3>
                 <ul className="mt-4 space-y-2.5">
                   {value.points.map((point) => (
                     <li key={point[locale]} className="flex gap-2.5 text-sm leading-relaxed text-slate-600">
@@ -98,8 +123,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </Container>
       </section>
 
-      <section className="bg-ink-950 py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden bg-ink-950 py-20 sm:py-28">
+        <ChevronMotif />
+        <Container className="relative">
           <SectionHeading eyebrow="International" title={t("geographyTitle")} light />
           <div className="mt-8 flex flex-wrap gap-3">
             {geography.map((country) => (

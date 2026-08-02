@@ -45,7 +45,11 @@
     "valuesSubtitle": "The principles that guide every engagement.",
     "founderEyebrow": "The founder",
     "founderExperienceTitle": "Professional background",
-    "geographyTitle": "Areas of operation"
+    "geographyTitle": "Areas of operation",
+    "factYears": "years",
+    "factExperienceLabel": "of combined professional experience",
+    "factPolesLabel": "dedicated areas of expertise",
+    "factCountriesLabel": "countries with completed assignments"
   },
   "services": {
     "title": "Our services",

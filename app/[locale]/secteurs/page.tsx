@@ -4,6 +4,7 @@ import { Building2, Factory, GraduationCap, MoreHorizontal, ShoppingCart, Sprout
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { ButtonLink } from "@/components/button";
+import { DossierTag, cutCorner } from "@/components/dossier-tag";
 import { sectors } from "@/content/company";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -30,8 +31,11 @@ export default async function SectorsPage({ params }: { params: Promise<{ locale
           {sectors.map((sector, i) => {
             const Icon = sectorIcons[i];
             return (
-              <div key={sector.value} className="rounded-2xl border border-slate-200 p-7">
-                <Icon className="text-accent-600" size={26} strokeWidth={1.5} />
+              <div key={sector.value} className={`border border-slate-200 bg-white p-7 ${cutCorner}`}>
+                <div className="flex items-start justify-between gap-3">
+                  <Icon className="text-accent-600" size={26} strokeWidth={1.5} />
+                  <DossierTag>{String(i + 1).padStart(2, "0")}</DossierTag>
+                </div>
                 <p className="mt-4 font-heading text-lg font-semibold text-ink-950">{sector.label[locale]}</p>
               </div>
             );
