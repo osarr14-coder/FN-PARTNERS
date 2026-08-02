@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Award, Database, GraduationCap, Landmark, Layers3, Settings2, ShieldCheck, TrendingUp, Users2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -58,20 +59,30 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
             backgroundSize: "48px 48px",
           }}
         />
-        <Container className="relative py-24 sm:py-32">
-          <p className="text-xs font-semibold uppercase tracking-wider text-accent-500">{t("heroEyebrow")}</p>
-          <h1 className="mt-4 max-w-3xl text-balance font-heading text-4xl font-semibold text-white sm:text-5xl">
-            {company.tagline[locale]}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">{t("heroLead")}</p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <ButtonLink href="/devis" variant="accent">
-              {tc("requestQuote")}
-            </ButtonLink>
-            <ButtonLink href="/contact" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-              {tc("contactExpert")}
-            </ButtonLink>
+        <Container className="relative grid grid-cols-1 items-center gap-12 py-24 sm:py-32 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-accent-500">{t("heroEyebrow")}</p>
+            <h1 className="mt-4 text-balance font-heading text-4xl font-semibold text-white sm:text-5xl">
+              {company.tagline[locale]}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">{t("heroLead")}</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <ButtonLink href="/devis" variant="accent">
+                {tc("requestQuote")}
+              </ButtonLink>
+              <ButtonLink href="/contact" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+                {tc("contactExpert")}
+              </ButtonLink>
+            </div>
           </div>
+          <Image
+            src="/images/hero-corporate-finance.jpg"
+            alt=""
+            width={1024}
+            height={420}
+            priority
+            className="w-full rounded-2xl shadow-2xl ring-1 ring-white/10"
+          />
         </Container>
       </section>
 
