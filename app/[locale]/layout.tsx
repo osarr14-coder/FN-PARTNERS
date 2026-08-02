@@ -4,7 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { headingFont, bodyFont } from "@/lib/fonts";
-import { siteUrl } from "@/lib/seo";
+import { siteUrl, defaultOgImage } from "@/lib/seo";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CookieConsent } from "@/components/cookie-consent";
@@ -27,9 +27,11 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "FN Partners",
     type: "website",
+    images: [{ url: defaultOgImage, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
+    images: [defaultOgImage],
   },
 };
 

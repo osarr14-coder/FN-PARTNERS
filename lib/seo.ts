@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
 
+export const defaultOgImage = `${siteUrl}/images/og-image.png`;
+
 export function buildMetadata({
   locale,
   pathname,
@@ -19,6 +21,7 @@ export function buildMetadata({
   const url = `${siteUrl}/${locale}${clean}`;
   const frUrl = `${siteUrl}/fr${clean}`;
   const enUrl = `${siteUrl}/en${clean}`;
+  const ogImage = image || defaultOgImage;
 
   return {
     title,
@@ -34,12 +37,13 @@ export function buildMetadata({
       siteName: "FN Partners",
       locale: locale === "fr" ? "fr_MA" : "en_US",
       type: "website",
-      ...(image ? { images: [{ url: image }] } : {}),
+      images: [{ url: ogImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [ogImage],
     },
   };
 }
