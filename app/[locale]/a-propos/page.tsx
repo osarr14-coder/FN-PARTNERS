@@ -105,6 +105,15 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                     <DossierTag>{String(i + 1).padStart(2, "0")}</DossierTag>
                     <span className="font-mono text-xs text-slate-400">{role.duration[locale]}</span>
                   </div>
+                  {role.logo && (
+                    <Image
+                      src={role.logo}
+                      alt={role.organization}
+                      width={120}
+                      height={40}
+                      className="mt-3 h-8 w-auto max-w-[120px] object-contain object-left"
+                    />
+                  )}
                   <h3 className="mt-2 font-heading text-lg font-semibold text-ink-950">{role.organization}</h3>
                   <ul className="mt-3 space-y-1.5">
                     {role.highlights.map((h) => (

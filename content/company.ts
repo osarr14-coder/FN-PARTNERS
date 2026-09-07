@@ -319,9 +319,10 @@ export const servicePoles: ServicePole[] = [
   },
 ];
 
-export const references: { name: string; missions: Bilingual[] }[] = [
+export const references: { name: string; logo?: string; missions: Bilingual[] }[] = [
   {
     name: "Groupe ADDOHA",
+    logo: "/images/logos/addoha.png",
     missions: [
       {
         fr: "Consolidation des comptes du groupe en normes IFRS",
@@ -343,6 +344,7 @@ export const references: { name: string; missions: Bilingual[] }[] = [
   },
   {
     name: "Marjane Holding",
+    logo: "/images/logos/marjane.png",
     missions: [
       { fr: "Formation sur la finance pour les non-financiers", en: "Finance courses for non-financial staff" },
       {
@@ -353,6 +355,7 @@ export const references: { name: string; missions: Bilingual[] }[] = [
   },
   {
     name: "Forafric Maroc",
+    logo: "/images/logos/forafric.png",
     missions: [
       { fr: "Revue des procédures et des process", en: "Assessing procedures and processes" },
       { fr: "Missions d'audit opérationnel", en: "Operational audit assignments" },
@@ -360,6 +363,7 @@ export const references: { name: string; missions: Bilingual[] }[] = [
   },
   {
     name: "Novancy Consulting",
+    logo: "/images/logos/novancy.png",
     missions: [
       { fr: "Diagnostic financier des comptes", en: "Financial diagnosis of accounts" },
       { fr: "Établissement du business plan de la société", en: "Preparation of the company's business plan" },
@@ -368,6 +372,7 @@ export const references: { name: string; missions: Bilingual[] }[] = [
   },
   {
     name: "Webeuz",
+    logo: "/images/logos/webeuz.png",
     missions: [
       { fr: "Établissement du business plan de la société", en: "Preparation of the company's business plan" },
       { fr: "Évaluation de la société", en: "Business valuation" },
@@ -381,6 +386,7 @@ export const founder = {
   experience: [
     {
       organization: "Groupe ADDOHA",
+      logo: "/images/logos/addoha.png",
       duration: { fr: "14 ans", en: "14 years" } satisfies Bilingual,
       highlights: [
         {
@@ -403,6 +409,7 @@ export const founder = {
     },
     {
       organization: "Deloitte Audit",
+      logo: "/images/logos/deloitte.png",
       duration: { fr: "2 ans", en: "2 years" } satisfies Bilingual,
       highlights: [
         { fr: "Audit contractuel", en: "Contractual audit" },
@@ -412,6 +419,7 @@ export const founder = {
     },
     {
       organization: "Deloitte Conseil",
+      logo: "/images/logos/deloitte.png",
       duration: { fr: "2 ans", en: "2 years" } satisfies Bilingual,
       highlights: [
         {
@@ -423,6 +431,7 @@ export const founder = {
     },
     {
       organization: "Groupe MANAGEM",
+      logo: "/images/logos/managem.png",
       duration: { fr: "2 ans", en: "2 years" } satisfies Bilingual,
       highlights: [
         {
@@ -434,7 +443,7 @@ export const founder = {
   ],
 };
 
-export const geography = ["Maroc", "France", "Algérie", "Sénégal", "Guinée", "Côte d'Ivoire"];
+export const geography = ["Maroc", "Sénégal", "Guinée", "Côte d'Ivoire", "France", "Algérie"];
 
 /** [provisoire] Secteurs génériques du cahier des charges — à confronter aux vrais
  * secteurs clients du cabinet (immobilier, distribution, agroalimentaire, conseil

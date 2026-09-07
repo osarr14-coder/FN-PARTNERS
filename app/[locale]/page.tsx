@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Award, Database, GraduationCap, Landmark, Layers3, Settings2, ShieldCheck, TrendingUp, Users2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -139,8 +140,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {references.map((ref, i) => (
               <div key={ref.name} className={`border border-slate-200 bg-white p-6 ${cutCorner}`}>
-                <DossierTag>Réf · {String(i + 1).padStart(2, "0")}</DossierTag>
-                <p className="mt-2 font-heading text-base font-semibold text-ink-950">{ref.name}</p>
+                <div className="flex items-center justify-between gap-3">
+                  <DossierTag>Réf · {String(i + 1).padStart(2, "0")}</DossierTag>
+                  {ref.logo && (
+                    <Image
+                      src={ref.logo}
+                      alt={ref.name}
+                      width={96}
+                      height={40}
+                      className="h-8 w-auto max-w-[96px] object-contain object-right"
+                    />
+                  )}
+                </div>
+                <p className="mt-3 font-heading text-base font-semibold text-ink-950">{ref.name}</p>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
                   {ref.missions.slice(0, 2).map((mission) => (
                     <li key={mission[locale]}>{mission[locale]}</li>
