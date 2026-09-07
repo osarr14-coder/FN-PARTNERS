@@ -37,6 +37,13 @@ export async function POST(request: Request) {
   }
   const data = parsed.data;
 
+  const backendConfigured = Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY && process.env.RESEND_API_KEY
+  );
+  if (!backendConfigured) {
+    return NextResponse.json({ error: "service_not_configured" }, { status: 503 });
+  }
+
   const recaptchaToken = formData.get("recaptchaToken")?.toString() || null;
   const recaptchaOk = await verifyRecaptcha(recaptchaToken);
   if (!recaptchaOk) {

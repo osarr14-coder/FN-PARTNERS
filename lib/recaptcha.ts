@@ -1,8 +1,9 @@
 export async function verifyRecaptcha(token: string | null): Promise<boolean> {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-  // Pas de clé configurée : mode dégradé, on ne bloque pas la soumission tant que
-  // reCAPTCHA n'est pas activé.
-  if (!secretKey) return true;
+  // Fail-closed : sans clé configurée, on bloque plutôt que de désactiver silencieusement
+  // la protection anti-spam. L'appelant doit vérifier que le service est configuré avant
+  // d'atteindre ce point (voir app/api/devis/route.ts).
+  if (!secretKey) return false;
   if (!token) return false;
 
   try {

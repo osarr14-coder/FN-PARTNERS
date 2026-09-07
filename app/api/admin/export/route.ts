@@ -9,14 +9,16 @@ function csvEscape(value: string) {
 }
 
 export async function GET(request: Request) {
+  // Fail-closed : tant que Supabase n'est pas configuré, l'export est refusé — pas
+  // autorisé sans vérification.
   const configured = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-  if (configured) {
-    const supabaseAuth = await createClient();
-    const {
-      data: { user },
-    } = await supabaseAuth.auth.getUser();
-    if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  }
+  if (!configured) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  const supabaseAuth = await createClient();
+  const {
+    data: { user },
+  } = await supabaseAuth.auth.getUser();
+  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   const url = new URL(request.url);
   const q = url.searchParams.get("q") ?? "";

@@ -23,11 +23,13 @@ const links = [
 ];
 
 export default async function ProtectedAdminLayout({ children }: { children: React.ReactNode }) {
+  // Fail-closed : tant que Supabase n'est pas configuré, personne ne peut accéder à
+  // l'espace admin — pas l'inverse.
   const configured = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-  if (configured) {
-    const user = await getUser();
-    if (!user) redirect("/admin/login");
-  }
+  if (!configured) redirect("/admin/login");
+
+  const user = await getUser();
+  if (!user) redirect("/admin/login");
 
   return (
     <div className="flex min-h-screen flex-col lg:flex-row">
