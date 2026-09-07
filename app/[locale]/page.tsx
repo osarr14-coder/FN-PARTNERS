@@ -57,7 +57,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         <ChevronMotif />
         <Container className="relative py-16 sm:py-20">
           <DossierTag light>{t("heroEyebrow")}</DossierTag>
-          <h1 className="mt-3 max-w-2xl text-balance font-heading text-4xl font-semibold text-white sm:text-5xl">
+          <h1 className="mt-3 max-w-2xl text-balance font-heading text-5xl font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl">
             {company.tagline[locale]}
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">{t("heroLead")}</p>
@@ -165,7 +165,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       </section>
 
       <section className="relative overflow-hidden bg-ink-950 py-20 sm:py-28">
-        <ChevronMotif />
+        <ChevronMotif variant="quiet" />
         <Container className="relative">
           <SectionHeading eyebrow="International" title={t("geographyTitle")} subtitle={t("geographySubtitle")} light />
           <div className="mt-8 flex flex-wrap gap-3">
