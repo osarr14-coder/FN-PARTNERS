@@ -405,6 +405,22 @@ export const founder = {
           fr: "Coordination du développement en Afrique de l'Ouest",
           en: "Coordinating development in West Africa",
         },
+        {
+          fr: "Mise en place du contrôle de gestion dans les filiales en Afrique de l'Ouest",
+          en: "Implementing management control in West African subsidiaries",
+        },
+        {
+          fr: "Gestion des choix d'investissements",
+          en: "Managing investment decisions",
+        },
+        {
+          fr: "Gestion des partenariats stratégiques et des JVs",
+          en: "Managing strategic partnerships and joint ventures",
+        },
+        {
+          fr: "Structuration des financements",
+          en: "Structuring financing arrangements",
+        },
       ],
     },
     {
@@ -415,6 +431,7 @@ export const founder = {
         { fr: "Audit contractuel", en: "Contractual audit" },
         { fr: "Commissariat aux comptes", en: "Statutory audit" },
         { fr: "Audit des comptes consolidés", en: "Consolidated accounts audit" },
+        { fr: "Audit des liasses de remontées en IFRS", en: "Audit of IFRS reporting packages" },
       ],
     },
     {
@@ -427,6 +444,7 @@ export const founder = {
           en: "Support for the preparation of consolidated accounts",
         },
         { fr: "Mise en place des normes IFRS", en: "Implementation of IFRS standards" },
+        { fr: "Formation des clients sur les normes IFRS", en: "Training clients on IFRS standards" },
       ],
     },
     {
