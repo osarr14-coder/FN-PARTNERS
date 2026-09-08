@@ -61,7 +61,10 @@ export const strengths: { title: Bilingual; description: Bilingual }[] = [
     },
   },
   {
-    title: { fr: "Expérience probante en Corporate Finance", en: "A proven track record in Corporate Finance" },
+    title: {
+      fr: "Expérience probante en missions financières stratégiques",
+      en: "A proven track record in strategic financial engagements",
+    },
     description: {
       fr: "Plusieurs missions de planification financière et d'évaluation de projets d'investissement et d'entreprises.",
       en: "Numerous assignments in financial planning and in the evaluation of investment projects and companies.",
