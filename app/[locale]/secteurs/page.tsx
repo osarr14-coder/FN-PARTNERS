@@ -77,7 +77,6 @@ export default async function SectorsPage({ params }: { params: Promise<{ locale
           <div className="dossier-panels">
             {sectors.map((sector, i) => {
               const Icon = sectorIcons[i];
-              const isOther = sector.value === "autre";
               return (
                 <article
                   key={sector.value}
@@ -98,9 +97,7 @@ export default async function SectorsPage({ params }: { params: Promise<{ locale
                     </div>
                   </div>
 
-                  <p className="mt-6 max-w-2xl text-sm leading-relaxed text-slate-600">
-                    {isOther ? t("otherSectorIntro") : t("sectorIntro", { sector: sector.label[locale] })}
-                  </p>
+                  <p className="mt-6 max-w-2xl text-sm leading-relaxed text-slate-600">{sector.intro[locale]}</p>
 
                   <p className="mt-8 text-xs font-semibold uppercase tracking-wider text-slate-500">
                     {t("polesTitle")}

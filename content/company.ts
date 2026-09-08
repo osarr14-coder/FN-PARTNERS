@@ -463,15 +463,65 @@ export const founder = {
 
 export const geography = ["Maroc", "Sénégal", "Guinée", "Côte d'Ivoire", "France", "Algérie"];
 
-/** [provisoire] Secteurs génériques du cahier des charges — à confronter aux vrais
- * secteurs clients du cabinet (immobilier, distribution, agroalimentaire, conseil
- * confirmés par les références réelles ci-dessus). */
-export const sectors: { value: string; label: Bilingual }[] = [
-  { value: "industrie", label: { fr: "Industrie", en: "Industry" } },
-  { value: "btp_immobilier", label: { fr: "BTP et promotion immobilière", en: "Construction & real estate" } },
-  { value: "distribution", label: { fr: "Distribution et commerce", en: "Retail & distribution" } },
-  { value: "agroalimentaire", label: { fr: "Agroalimentaire", en: "Agrifood" } },
-  { value: "services_conseil", label: { fr: "Services et conseil", en: "Services & consulting" } },
-  { value: "pme_startup", label: { fr: "PME et start-up", en: "SMEs & start-ups" } },
-  { value: "autre", label: { fr: "Autre", en: "Other" } },
+// Secteurs confrontés aux références réelles du cabinet (voir `references` et
+// `founder.experience` ci-dessus) : chaque intro cite la mission concrète la
+// plus parlante pour ce secteur plutôt qu'une formule générique répétée sept
+// fois. Le secteur "autre" reste volontairement une invitation générique.
+export const sectors: { value: string; label: Bilingual; intro: Bilingual }[] = [
+  {
+    value: "industrie",
+    label: { fr: "Industrie", en: "Industry" },
+    intro: {
+      fr: "Le secteur industriel impose des exigences comptables et de reporting particulières — normes IFRS, structuration du contrôle de gestion, consolidation de filiales. Nous avons notamment conduit la mise en place des normes IFRS pour le Groupe Managem.",
+      en: "Industrial companies face specific accounting and reporting requirements — IFRS standards, management-control structuring, subsidiary consolidation. We led the IFRS implementation project for Groupe Managem, among other engagements.",
+    },
+  },
+  {
+    value: "btp_immobilier",
+    label: { fr: "BTP et promotion immobilière", en: "Construction & real estate" },
+    intro: {
+      fr: "La promotion immobilière combine des cycles de financement longs, des opérations de marché (equity et dette) et une consolidation multi-filiales. Nous accompagnons le Groupe ADDOHA depuis 14 ans sur l'ensemble de ces enjeux, de la structuration des financements à la communication financière.",
+      en: "Real estate development combines long financing cycles, equity and debt market operations, and multi-subsidiary consolidation. We have supported Groupe ADDOHA for 14 years across these challenges, from financing structuring to financial communication.",
+    },
+  },
+  {
+    value: "distribution",
+    label: { fr: "Distribution et commerce", en: "Retail & distribution" },
+    intro: {
+      fr: "Les enseignes de distribution doivent outiller leurs équipes non financières sur les fondamentaux de la finance et sécuriser leurs modes de financement. Nous sommes intervenus auprès de Marjane Holding sur ces deux volets, avec des formations dédiées à leurs équipes.",
+      en: "Retail groups need to equip non-financial teams with core finance skills and secure their financing arrangements. We worked with Marjane Holding on both fronts, delivering dedicated training to their teams.",
+    },
+  },
+  {
+    value: "agroalimentaire",
+    label: { fr: "Agroalimentaire", en: "Agrifood" },
+    intro: {
+      fr: "Dans l'agroalimentaire, la maîtrise des procédures internes et la fiabilité des contrôles opérationnels sont déterminantes. Nous avons mené des missions de revue des procédures et d'audit opérationnel pour Forafric Maroc.",
+      en: "In the agrifood sector, robust internal procedures and reliable operational controls are critical. We carried out procedures reviews and operational audit assignments for Forafric Maroc.",
+    },
+  },
+  {
+    value: "services_conseil",
+    label: { fr: "Services et conseil", en: "Services & consulting" },
+    intro: {
+      fr: "Les cabinets de conseil et sociétés de services ont besoin d'un diagnostic financier clair et d'un business plan solide pour structurer leur développement. C'est le type de mission menée pour Novancy Consulting et Webeuz : diagnostic financier, business plan et valorisation.",
+      en: "Consulting and services firms need a clear financial diagnosis and a solid business plan to structure their growth. This is the kind of engagement we led for Novancy Consulting and Webeuz — financial diagnosis, business plan and valuation.",
+    },
+  },
+  {
+    value: "pme_startup",
+    label: { fr: "PME et start-up", en: "SMEs & start-ups" },
+    intro: {
+      fr: "Les PME en croissance ont rarement besoin d'une direction financière à temps plein, mais bien d'un diagnostic financier, d'un business plan bancable et d'une valorisation crédible au bon moment. C'est précisément ce que nous construisons avec les dirigeants, mission par mission.",
+      en: "Growing SMEs rarely need a full-time finance department, but they do need a financial diagnosis, a bankable business plan, and a credible valuation at the right moment. That is exactly what we build with founders and managers, one engagement at a time.",
+    },
+  },
+  {
+    value: "autre",
+    label: { fr: "Autre", en: "Other" },
+    intro: {
+      fr: "Votre secteur n'apparaît pas dans cette liste ? Nos trois pôles d'expertise s'adaptent à tout type d'organisation — décrivez-nous votre contexte.",
+      en: "Your sector isn't listed here? Our three areas of expertise adapt to any type of organization — tell us about your context.",
+    },
+  },
 ];
