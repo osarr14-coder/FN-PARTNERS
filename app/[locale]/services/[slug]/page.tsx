@@ -8,7 +8,6 @@ import { SectionHeading } from "@/components/section-heading";
 import { ButtonLink } from "@/components/button";
 import { JsonLd } from "@/components/json-ld";
 import { ChevronMotif } from "@/components/chevron-motif";
-import { DossierTag } from "@/components/dossier-tag";
 import { routing, type Locale } from "@/i18n/routing";
 import { company, servicePoles } from "@/content/company";
 import { buildMetadata, siteUrl } from "@/lib/seo";
@@ -17,12 +16,6 @@ const poleIcons: Record<string, typeof Landmark> = {
   "corporate-finance": Landmark,
   "audit-revision": ShieldCheck,
   "management-organisation": Settings2,
-};
-
-const poleCodes: Record<string, string> = {
-  "corporate-finance": "CF",
-  "audit-revision": "AR",
-  "management-organisation": "MO",
 };
 
 export function generateStaticParams() {
@@ -88,10 +81,7 @@ export default async function ServiceDetailPage({
           <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10">
             <Icon className="text-accent-500" size={28} strokeWidth={1.5} />
           </div>
-          <div className="mt-6">
-            <DossierTag light>Dossier · {poleCodes[pole.slug]}</DossierTag>
-          </div>
-          <h1 className="mt-2 max-w-2xl text-balance font-heading text-4xl font-semibold text-white sm:text-5xl">
+          <h1 className="mt-6 max-w-2xl text-balance font-heading text-4xl font-semibold text-white sm:text-5xl">
             {pole.name[locale]}
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300">{pole.summary[locale]}</p>

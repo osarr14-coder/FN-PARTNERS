@@ -11,7 +11,8 @@
     "tagline": "Conseil dans les métiers de l'audit, de l'expertise comptable et de la finance",
     "navigation": "Navigation",
     "contact": "Contact",
-    "legal": "Mentions légales",
+    "legal": "Légal",
+    "legalNotice": "Mentions légales",
     "privacy": "Politique de confidentialité",
     "rights": "Tous droits réservés."
   },
@@ -131,6 +132,10 @@
     "title": "Politique de confidentialité",
     "subtitle": "Comment FN Partners collecte, utilise et protège vos données à caractère personnel.",
     "lastUpdated": "Dernière mise à jour : août 2026"
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "subtitle": "Informations relatives à l'éditeur et à l'hébergement de ce site."
   },
   "cookieConsent": {
     "message": "Nous utilisons des cookies techniques nécessaires au fonctionnement du site, ainsi que des cookies de protection anti-spam (reCAPTCHA) sur notre formulaire de devis.",

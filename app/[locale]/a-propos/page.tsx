@@ -116,10 +116,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="mt-8 flex flex-wrap gap-3">
             {geography.map((country) => (
               <span
-                key={country}
+                key={country.fr}
                 className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-200"
               >
-                {country}
+                {country[locale]}
               </span>
             ))}
           </div>

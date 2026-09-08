@@ -11,7 +11,8 @@
     "tagline": "Audit and advisory services in finance and accounting",
     "navigation": "Navigation",
     "contact": "Contact",
-    "legal": "Legal notice",
+    "legal": "Legal",
+    "legalNotice": "Legal notice",
     "privacy": "Privacy policy",
     "rights": "All rights reserved."
   },
@@ -131,6 +132,10 @@
     "title": "Privacy Policy",
     "subtitle": "How FN Partners collects, uses, and protects your personal data.",
     "lastUpdated": "Last updated: August 2026"
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "subtitle": "Information about this site's publisher and hosting."
   },
   "cookieConsent": {
     "message": "We use technical cookies necessary for the website to function, as well as anti-spam protection cookies (reCAPTCHA) on our quote request form.",

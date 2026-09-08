@@ -15,8 +15,8 @@ export const company = {
     en: "Audit and advisory services in finance and accounting",
   } satisfies Bilingual,
   about: {
-    fr: "FN Partners est un cabinet de conseil spécialisé dans les métiers de la finance et de l'expertise comptable. Notre assistance porte sur un large spectre de sujets préoccupant les dirigeants des entreprises et des groupes marocains. De l'étude des investissements au transfert du savoir-faire aux équipes, nous accompagnons les entreprises marocaines dans les différents défis liés à la gestion comptable et financière.",
-    en: "FN Partners is a consulting firm specializing in finance and accounting professions. We provide advisory services across a broad range of strategic and operational issues faced by leaders of Moroccan companies and business groups. From investment analysis to the transfer of know-how to in-house teams, we support Moroccan companies in addressing the various challenges related to accounting and financial management.",
+    fr: "FN Partners est un cabinet de conseil spécialisé dans les métiers de l'audit, de l'expertise comptable et de la finance. Notre assistance porte sur un large spectre de sujets préoccupant les dirigeants des entreprises et des groupes marocains. De l'étude des investissements au transfert du savoir-faire aux équipes, nous accompagnons les entreprises marocaines dans les différents défis liés à la gestion comptable et financière.",
+    en: "FN Partners is a consulting firm specializing in audit, accounting, and finance professions. We provide advisory services across a broad range of strategic and operational issues faced by leaders of Moroccan companies and business groups. From investment analysis to the transfer of know-how to in-house teams, we support Moroccan companies in addressing the various challenges related to accounting and financial management.",
   } satisfies Bilingual,
 };
 
@@ -423,7 +423,14 @@ export const founder = {
   ],
 };
 
-export const geography = ["Maroc", "Sénégal", "Guinée", "Côte d'Ivoire", "France", "Algérie"];
+export const geography: Bilingual[] = [
+  { fr: "Maroc", en: "Morocco" },
+  { fr: "Sénégal", en: "Senegal" },
+  { fr: "Guinée", en: "Guinea" },
+  { fr: "Côte d'Ivoire", en: "Ivory Coast" },
+  { fr: "France", en: "France" },
+  { fr: "Algérie", en: "Algeria" },
+];
 
 // Liste des secteurs proposée dans le sélecteur du formulaire de devis.
 export const sectors: { value: string; label: Bilingual }[] = [

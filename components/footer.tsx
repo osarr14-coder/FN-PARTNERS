@@ -75,6 +75,11 @@ export function Footer() {
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{tf("legal")}</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li>
+              <Link href="/mentions-legales" className="text-slate-400 transition-colors hover:text-white">
+                {tf("legalNotice")}
+              </Link>
+            </li>
+            <li>
               <Link href="/confidentialite" className="text-slate-400 transition-colors hover:text-white">
                 {tf("privacy")}
               </Link>

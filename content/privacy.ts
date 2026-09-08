@@ -63,8 +63,8 @@ export const privacySections: { heading: Bilingual; body: Bilingual[] }[] = [
         en: "In accordance with Moroccan law n° 09-08 on the protection of individuals with regard to the processing of personal data, and with the EU General Data Protection Regulation (GDPR) for visitors located in the European Union, you have a right of access, rectification, erasure, and objection regarding the processing of your data.",
       },
       {
-        fr: "Vous pouvez exercer ces droits en nous écrivant à l'adresse f.nasri@fnpartners.ma.",
-        en: "You can exercise these rights by writing to us at f.nasri@fnpartners.ma.",
+        fr: "Vous pouvez exercer ces droits en nous écrivant à l'adresse contact@fnpartners.ma.",
+        en: "You can exercise these rights by writing to us at contact@fnpartners.ma.",
       },
     ],
   },
