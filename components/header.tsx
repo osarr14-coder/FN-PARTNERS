@@ -18,7 +18,6 @@ export function Header() {
     { href: "/", label: t("home") },
     { href: "/a-propos", label: t("about") },
     { href: "/services", label: t("services") },
-    { href: "/secteurs", label: t("sectors") },
     { href: "/actualites", label: t("news") },
     { href: "/contact", label: t("contact") },
   ];

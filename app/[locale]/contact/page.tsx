@@ -5,7 +5,7 @@ import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { ButtonLink } from "@/components/button";
 import { ChevronMotif } from "@/components/chevron-motif";
-import { DossierTag, cutCorner } from "@/components/dossier-tag";
+import { cutCorner } from "@/components/dossier-tag";
 import { contact } from "@/content/company";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -23,9 +23,9 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const tc = await getTranslations("common");
 
   const cards = [
-    { icon: MapPin, code: "ADR", label: t("addressLabel"), value: contact.addressLines[locale].join(", "), href: undefined },
-    { icon: Phone, code: "TÉL", label: t("phoneLabel"), value: contact.phone, href: contact.phoneHref },
-    { icon: Mail, code: "MAIL", label: t("emailLabel"), value: contact.email, href: `mailto:${contact.email}` },
+    { icon: MapPin, label: t("addressLabel"), value: contact.addressLines[locale].join(", "), href: undefined },
+    { icon: Phone, label: t("phoneLabel"), value: contact.phone, href: contact.phoneHref },
+    { icon: Mail, label: t("emailLabel"), value: contact.email, href: `mailto:${contact.email}` },
   ];
 
   return (
@@ -36,10 +36,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {cards.map((card) => (
             <div key={card.label} className={`border border-slate-200 bg-white p-7 ${cutCorner}`}>
-              <div className="flex items-start justify-between gap-3">
-                <card.icon className="text-accent-600" size={26} strokeWidth={1.5} />
-                <DossierTag>{card.code}</DossierTag>
-              </div>
+              <card.icon className="text-accent-600" size={26} strokeWidth={1.5} />
               <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-slate-500">{card.label}</p>
               {card.href ? (
                 <a href={card.href} className="mt-1.5 block text-sm font-medium text-ink-900 hover:text-accent-600">

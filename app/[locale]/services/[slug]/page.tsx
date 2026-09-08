@@ -103,48 +103,20 @@ export default async function ServiceDetailPage({
         </Container>
       </section>
 
-      <section className="py-20 sm:py-28">
-        <Container>
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1.3fr]">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-accent-600">{t("itemsTitle")}</p>
-              <ul className="mt-5 space-y-3">
-                {pole.items.map((item) => (
-                  <li key={item[locale]} className="flex gap-3 text-sm leading-relaxed text-slate-700">
-                    <CheckCircle2 className="mt-0.5 shrink-0 text-accent-600" size={18} />
-                    {item[locale]}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-accent-600">{t("benefitsTitle")}</p>
-              <div className="mt-5 space-y-4">
-                {pole.benefits.map((benefit) => (
-                  <p key={benefit[locale]} className="rounded-xl bg-slate-50 p-5 text-sm leading-relaxed text-slate-700">
-                    {benefit[locale]}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       <section className="bg-slate-50 py-20 sm:py-28">
         <Container>
-          <SectionHeading title={t("processTitle")} align="center" />
-          <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {pole.process.map((step, i) => (
-              <div key={step[locale]} className="rounded-2xl bg-white p-6 ring-1 ring-slate-200">
-                <span className="font-heading text-2xl font-semibold text-accent-500">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-3 text-sm leading-relaxed text-slate-700">{step[locale]}</p>
-              </div>
+          <SectionHeading title={t("itemsTitle")} align="center" />
+          <ul className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
+            {pole.items.map((item) => (
+              <li
+                key={item[locale]}
+                className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 text-sm leading-relaxed text-slate-700"
+              >
+                <CheckCircle2 className="mt-0.5 shrink-0 text-accent-600" size={18} />
+                {item[locale]}
+              </li>
             ))}
-          </div>
+          </ul>
         </Container>
       </section>
 

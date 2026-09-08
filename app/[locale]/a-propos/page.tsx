@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ExternalLink } from "lucide-react";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { ButtonLink } from "@/components/button";
@@ -57,10 +58,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <Container>
           <SectionHeading eyebrow={company.name} title={t("valuesTitle")} subtitle={t("valuesSubtitle")} />
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
-            {values.map((value, i) => (
+            {values.map((value) => (
               <div key={value.title[locale]} className={`border border-slate-200 bg-white p-7 ${cutCorner}`}>
-                <DossierTag>Valeur · {String(i + 1).padStart(2, "0")}</DossierTag>
-                <h3 className="mt-3 font-heading text-lg font-semibold text-ink-950">{value.title[locale]}</h3>
+                <h3 className="font-heading text-lg font-semibold text-ink-950">{value.title[locale]}</h3>
                 <ul className="mt-4 space-y-2.5">
                   {value.points.map((point) => (
                     <li key={point[locale]} className="flex gap-2.5 text-sm leading-relaxed text-slate-600">
@@ -77,54 +77,33 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       <section className="py-20 sm:py-28">
         <Container>
-          <div className="flex flex-wrap items-center gap-6">
+          <div
+            className={`grid grid-cols-1 items-center gap-10 border border-slate-200 bg-white p-8 sm:p-12 lg:grid-cols-[auto_1fr] ${cutCorner}`}
+          >
             <Image
               src="/images/fedoua-nasri.jpg"
               alt={founder.name}
-              width={128}
-              height={128}
-              className="h-28 w-28 shrink-0 rounded-full object-cover ring-4 ring-accent-50 sm:h-32 sm:w-32"
+              width={224}
+              height={224}
+              className="h-40 w-40 shrink-0 rounded-full object-cover ring-4 ring-accent-50 sm:h-52 sm:w-52"
             />
             <div>
               <DossierTag>{t("founderEyebrow")}</DossierTag>
-              <h2 className="mt-1.5 text-balance font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">
+              <h2 className="mt-2 text-balance font-heading text-4xl font-semibold text-ink-950 sm:text-5xl">
                 {founder.name}
               </h2>
-              <p className="mt-1.5 text-slate-600">{founder.title[locale]}</p>
-            </div>
-          </div>
-
-          <div className="mt-12">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              {t("founderExperienceTitle")}
-            </p>
-            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
-              {founder.experience.map((role, i) => (
-                <div key={role.organization} className={`border border-slate-200 bg-white p-6 ${cutCorner}`}>
-                  <div className="flex items-baseline justify-between gap-3">
-                    <DossierTag>{String(i + 1).padStart(2, "0")}</DossierTag>
-                    <span className="font-mono text-xs text-slate-400">{role.duration[locale]}</span>
-                  </div>
-                  {role.logo && (
-                    <Image
-                      src={role.logo}
-                      alt={role.organization}
-                      width={120}
-                      height={40}
-                      className="mt-3 h-8 w-auto max-w-[120px] object-contain object-left"
-                    />
-                  )}
-                  <h3 className="mt-2 font-heading text-lg font-semibold text-ink-950">{role.organization}</h3>
-                  <ul className="mt-3 space-y-1.5">
-                    {role.highlights.map((h) => (
-                      <li key={h[locale]} className="flex gap-2.5 text-sm leading-relaxed text-slate-600">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-500" />
-                        {h[locale]}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              <p className="mt-2 text-lg text-slate-600">{founder.title[locale]}</p>
+              <div className="mt-6">
+                <a
+                  href={founder.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-ink-800 transition-colors hover:border-ink-900/40 hover:text-accent-600"
+                >
+                  {t("founderLinkedin")}
+                  <ExternalLink size={16} strokeWidth={1.5} />
+                </a>
+              </div>
             </div>
           </div>
         </Container>

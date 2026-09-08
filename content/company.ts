@@ -11,8 +11,8 @@ export interface Bilingual {
 export const company = {
   name: "FN Partners",
   tagline: {
-    fr: "Conseil dans les métiers de l'expertise comptable et de la finance",
-    en: "Advisory services in finance and accounting",
+    fr: "Audit et Conseil dans les métiers de l'expertise comptable et de la finance",
+    en: "Audit and advisory services in finance and accounting",
   } satisfies Bilingual,
   about: {
     fr: "FN Partners est un cabinet de conseil spécialisé dans les métiers de la finance et de l'expertise comptable. Notre assistance porte sur un large spectre de sujets préoccupant les dirigeants des entreprises et des groupes marocains. De l'étude des investissements au transfert du savoir-faire aux équipes, nous accompagnons les entreprises marocaines dans les différents défis liés à la gestion comptable et financière.",
@@ -319,70 +319,31 @@ export const servicePoles: ServicePole[] = [
   },
 ];
 
-export const references: { name: string; logo?: string; missions: Bilingual[] }[] = [
-  {
-    name: "Groupe ADDOHA",
-    logo: "/images/logos/addoha.png",
-    missions: [
-      {
-        fr: "Consolidation des comptes du groupe en normes IFRS",
-        en: "Consolidating group accounts in accordance with IFRS",
-      },
-      {
-        fr: "Gestion de la communication financière et des relations investisseurs",
-        en: "Managing financial communication and investor relations",
-      },
-      {
-        fr: "Assistance dans les opérations sur le marché financier (equity et dette)",
-        en: "Supporting equity and debt market transactions",
-      },
-      {
-        fr: "Planification financière des opérations d'investissement stratégique",
-        en: "Financial planning for strategic investment initiatives",
-      },
-    ],
-  },
-  {
-    name: "Marjane Holding",
-    logo: "/images/logos/marjane.png",
-    missions: [
-      { fr: "Formation sur la finance pour les non-financiers", en: "Finance courses for non-financial staff" },
-      {
-        fr: "Formation sur les modes de financement des grandes structures",
-        en: "Training on financing solutions for large enterprises",
-      },
-    ],
-  },
-  {
-    name: "Forafric Maroc",
-    logo: "/images/logos/forafric.png",
-    missions: [
-      { fr: "Revue des procédures et des process", en: "Assessing procedures and processes" },
-      { fr: "Missions d'audit opérationnel", en: "Operational audit assignments" },
-    ],
-  },
-  {
-    name: "Novancy Consulting",
-    logo: "/images/logos/novancy.png",
-    missions: [
-      { fr: "Diagnostic financier des comptes", en: "Financial diagnosis of accounts" },
-      { fr: "Établissement du business plan de la société", en: "Preparation of the company's business plan" },
-      { fr: "Valorisation de l'entreprise", en: "Business valuation" },
-    ],
-  },
-  {
-    name: "Webeuz",
-    logo: "/images/logos/webeuz.png",
-    missions: [
-      { fr: "Établissement du business plan de la société", en: "Preparation of the company's business plan" },
-      { fr: "Évaluation de la société", en: "Business valuation" },
-    ],
-  },
+// Logos affichés en bandeau sur la page d'accueil, section "Ils nous font
+// confiance" — liste fournie directement par le cabinet, sans détail de
+// mission (voir `sectors` ci-dessus pour les références commentées).
+export const trustedClients: { name: string; logo: string }[] = [
+  { name: "Groupe ADDOHA", logo: "/images/logos/trusted/addoha.png" },
+  { name: "Ciments de l'Atlas", logo: "/images/logos/trusted/cimat.png" },
+  { name: "Cobco", logo: "/images/logos/trusted/cobco.png" },
+  { name: "Managem", logo: "/images/logos/trusted/managem.png" },
+  { name: "Forafric", logo: "/images/logos/trusted/forafric.png" },
+  { name: "Tria", logo: "/images/logos/trusted/tria.png" },
+  { name: "10 Rajeb", logo: "/images/logos/trusted/10-rajeb.png" },
+  { name: "Benchrif Holding", logo: "/images/logos/trusted/benchrif.png" },
+  { name: "ANGSPE", logo: "/images/logos/trusted/angspe.png" },
+  { name: "Bosch", logo: "/images/logos/trusted/bosch.png" },
+  { name: "Bosch Rexroth", logo: "/images/logos/trusted/rexroth.png" },
+  { name: "MOL — Mining Operations Lab", logo: "/images/logos/trusted/mol.png" },
 ];
 
 export const founder = {
   name: "Fedoua Nasri",
-  title: { fr: "Associée Gérante, Expert-Comptable", en: "Managing Partner, Certified Public Accountant" } satisfies Bilingual,
+  title: {
+    fr: "Associée Gérante, Expert-Comptable DPLE",
+    en: "Managing Partner, Certified Public Accountant DPLE",
+  } satisfies Bilingual,
+  linkedin: "https://www.linkedin.com/in/fedoua-nasri-269a3628/",
   experience: [
     {
       organization: "Groupe ADDOHA",
@@ -463,65 +424,13 @@ export const founder = {
 
 export const geography = ["Maroc", "Sénégal", "Guinée", "Côte d'Ivoire", "France", "Algérie"];
 
-// Secteurs confrontés aux références réelles du cabinet (voir `references` et
-// `founder.experience` ci-dessus) : chaque intro cite la mission concrète la
-// plus parlante pour ce secteur plutôt qu'une formule générique répétée sept
-// fois. Le secteur "autre" reste volontairement une invitation générique.
-export const sectors: { value: string; label: Bilingual; intro: Bilingual }[] = [
-  {
-    value: "industrie",
-    label: { fr: "Industrie", en: "Industry" },
-    intro: {
-      fr: "Le secteur industriel impose des exigences comptables et de reporting particulières — normes IFRS, structuration du contrôle de gestion, consolidation de filiales. Nous avons notamment conduit la mise en place des normes IFRS pour le Groupe Managem.",
-      en: "Industrial companies face specific accounting and reporting requirements — IFRS standards, management-control structuring, subsidiary consolidation. We led the IFRS implementation project for Groupe Managem, among other engagements.",
-    },
-  },
-  {
-    value: "btp_immobilier",
-    label: { fr: "BTP et promotion immobilière", en: "Construction & real estate" },
-    intro: {
-      fr: "La promotion immobilière combine des cycles de financement longs, des opérations de marché (equity et dette) et une consolidation multi-filiales. Nous accompagnons le Groupe ADDOHA depuis 14 ans sur l'ensemble de ces enjeux, de la structuration des financements à la communication financière.",
-      en: "Real estate development combines long financing cycles, equity and debt market operations, and multi-subsidiary consolidation. We have supported Groupe ADDOHA for 14 years across these challenges, from financing structuring to financial communication.",
-    },
-  },
-  {
-    value: "distribution",
-    label: { fr: "Distribution et commerce", en: "Retail & distribution" },
-    intro: {
-      fr: "Les enseignes de distribution doivent outiller leurs équipes non financières sur les fondamentaux de la finance et sécuriser leurs modes de financement. Nous sommes intervenus auprès de Marjane Holding sur ces deux volets, avec des formations dédiées à leurs équipes.",
-      en: "Retail groups need to equip non-financial teams with core finance skills and secure their financing arrangements. We worked with Marjane Holding on both fronts, delivering dedicated training to their teams.",
-    },
-  },
-  {
-    value: "agroalimentaire",
-    label: { fr: "Agroalimentaire", en: "Agrifood" },
-    intro: {
-      fr: "Dans l'agroalimentaire, la maîtrise des procédures internes et la fiabilité des contrôles opérationnels sont déterminantes. Nous avons mené des missions de revue des procédures et d'audit opérationnel pour Forafric Maroc.",
-      en: "In the agrifood sector, robust internal procedures and reliable operational controls are critical. We carried out procedures reviews and operational audit assignments for Forafric Maroc.",
-    },
-  },
-  {
-    value: "services_conseil",
-    label: { fr: "Services et conseil", en: "Services & consulting" },
-    intro: {
-      fr: "Les cabinets de conseil et sociétés de services ont besoin d'un diagnostic financier clair et d'un business plan solide pour structurer leur développement. C'est le type de mission menée pour Novancy Consulting et Webeuz : diagnostic financier, business plan et valorisation.",
-      en: "Consulting and services firms need a clear financial diagnosis and a solid business plan to structure their growth. This is the kind of engagement we led for Novancy Consulting and Webeuz — financial diagnosis, business plan and valuation.",
-    },
-  },
-  {
-    value: "pme_startup",
-    label: { fr: "PME et start-up", en: "SMEs & start-ups" },
-    intro: {
-      fr: "Les PME en croissance ont rarement besoin d'une direction financière à temps plein, mais bien d'un diagnostic financier, d'un business plan bancable et d'une valorisation crédible au bon moment. C'est précisément ce que nous construisons avec les dirigeants, mission par mission.",
-      en: "Growing SMEs rarely need a full-time finance department, but they do need a financial diagnosis, a bankable business plan, and a credible valuation at the right moment. That is exactly what we build with founders and managers, one engagement at a time.",
-    },
-  },
-  {
-    value: "autre",
-    label: { fr: "Autre", en: "Other" },
-    intro: {
-      fr: "Votre secteur n'apparaît pas dans cette liste ? Nos trois pôles d'expertise s'adaptent à tout type d'organisation — décrivez-nous votre contexte.",
-      en: "Your sector isn't listed here? Our three areas of expertise adapt to any type of organization — tell us about your context.",
-    },
-  },
+// Liste des secteurs proposée dans le sélecteur du formulaire de devis.
+export const sectors: { value: string; label: Bilingual }[] = [
+  { value: "industrie", label: { fr: "Industrie", en: "Industry" } },
+  { value: "btp_immobilier", label: { fr: "BTP et promotion immobilière", en: "Construction & real estate" } },
+  { value: "distribution", label: { fr: "Distribution et commerce", en: "Retail & distribution" } },
+  { value: "agroalimentaire", label: { fr: "Agroalimentaire", en: "Agrifood" } },
+  { value: "services_conseil", label: { fr: "Services et conseil", en: "Services & consulting" } },
+  { value: "pme_startup", label: { fr: "PME et start-up", en: "SMEs & start-ups" } },
+  { value: "autre", label: { fr: "Autre", en: "Other" } },
 ];

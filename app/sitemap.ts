@@ -4,7 +4,7 @@ import { servicePoles } from "@/content/company";
 import { getPublishedPosts } from "@/lib/blog";
 import { siteUrl } from "@/lib/seo";
 
-const staticPaths = ["/", "/a-propos", "/services", "/secteurs", "/actualites", "/contact", "/devis"];
+const staticPaths = ["/", "/a-propos", "/services", "/actualites", "/contact", "/devis"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedPosts();

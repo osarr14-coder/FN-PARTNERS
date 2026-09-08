@@ -9,13 +9,12 @@ import { ButtonLink } from "@/components/button";
 import { JsonLd } from "@/components/json-ld";
 import { ChevronMotif } from "@/components/chevron-motif";
 import { DossierTag, cutCorner } from "@/components/dossier-tag";
-import { company, contact, geography, references, servicePoles, strengths } from "@/content/company";
+import { company, contact, geography, servicePoles, strengths, trustedClients } from "@/content/company";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata, siteUrl } from "@/lib/seo";
 
 const strengthIcons = [Award, Users2, Database, GraduationCap, TrendingUp, Layers3];
 const poleIcons = [Landmark, ShieldCheck, Settings2];
-const poleCodes = ["CF", "AR", "MO"];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -74,16 +73,25 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
       <section className="py-20 sm:py-28">
         <Container>
-          <SectionHeading eyebrow={company.name} title={t("strengthsTitle")} subtitle={t("strengthsSubtitle")} />
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4">
+              <Image
+                src="/images/fn-partners-logo.png"
+                alt={company.name}
+                width={460}
+                height={225}
+                className="h-12 w-auto sm:h-14"
+              />
+              <span className="font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">{company.name}</span>
+            </div>
+            <p className="mt-3 leading-relaxed text-slate-600">{t("strengthsSubtitle")}</p>
+          </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {strengths.map((item, i) => {
               const Icon = strengthIcons[i];
               return (
                 <div key={item.title[locale]} className={`border border-slate-200 bg-white p-6 ${cutCorner}`}>
-                  <div className="flex items-start justify-between gap-3">
-                    <Icon className="text-accent-600" size={28} strokeWidth={1.5} />
-                    <DossierTag>{String(i + 1).padStart(2, "0")}</DossierTag>
-                  </div>
+                  <Icon className="text-accent-600" size={28} strokeWidth={1.5} />
                   <h3 className="mt-4 font-heading text-lg font-semibold text-ink-950">{item.title[locale]}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description[locale]}</p>
                 </div>
@@ -96,7 +104,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       <section className="bg-slate-50 py-20 sm:py-28">
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading eyebrow="Expertise" title={t("servicesTitle")} subtitle={t("servicesSubtitle")} />
+            <SectionHeading title={t("servicesTitle")} subtitle={t("servicesSubtitle")} />
             <ButtonLink href="/services" variant="outline" className="shrink-0">
               {t("servicesCta")}
             </ButtonLink>
@@ -110,10 +118,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                   href={`/services/${pole.slug}`}
                   className={`group flex flex-col border border-slate-200 bg-white p-8 shadow-sm transition-all hover:shadow-md hover:border-ink-900/20 ${cutCorner}`}
                 >
-                  <div className="flex items-start justify-between gap-3">
-                    <Icon className="text-ink-800" size={30} strokeWidth={1.5} />
-                    <DossierTag>Dossier · {poleCodes[i]}</DossierTag>
-                  </div>
+                  <Icon className="text-ink-800" size={30} strokeWidth={1.5} />
                   <h3 className="mt-5 font-heading text-xl font-semibold text-ink-950">{pole.name[locale]}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">{pole.summary[locale]}</p>
                   <ul className="mt-5 space-y-2 text-sm text-slate-600">
@@ -136,28 +141,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
       <section className="py-20 sm:py-28">
         <Container>
-          <SectionHeading eyebrow="Track record" title={t("referencesTitle")} subtitle={t("referencesSubtitle")} />
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {references.map((ref, i) => (
-              <div key={ref.name} className={`border border-slate-200 bg-white p-6 ${cutCorner}`}>
-                <div className="flex items-center justify-between gap-3">
-                  <DossierTag>Réf · {String(i + 1).padStart(2, "0")}</DossierTag>
-                  {ref.logo && (
-                    <Image
-                      src={ref.logo}
-                      alt={ref.name}
-                      width={96}
-                      height={40}
-                      className="h-8 w-auto max-w-[96px] object-contain object-right"
-                    />
-                  )}
-                </div>
-                <p className="mt-3 font-heading text-base font-semibold text-ink-950">{ref.name}</p>
-                <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
-                  {ref.missions.slice(0, 2).map((mission) => (
-                    <li key={mission[locale]}>{mission[locale]}</li>
-                  ))}
-                </ul>
+          <SectionHeading title={t("referencesTitle")} align="center" />
+          <div className="mt-12 grid grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
+            {trustedClients.map((client) => (
+              <div key={client.name} className="flex items-center justify-center">
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={200}
+                  height={100}
+                  className="h-12 w-auto max-w-[140px] object-contain opacity-75 transition-opacity hover:opacity-100 sm:h-14"
+                />
               </div>
             ))}
           </div>
