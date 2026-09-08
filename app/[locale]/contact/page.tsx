@@ -23,9 +23,20 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const tc = await getTranslations("common");
 
   const cards = [
-    { icon: MapPin, label: t("addressLabel"), value: contact.addressLines[locale].join(", "), href: undefined },
-    { icon: Phone, label: t("phoneLabel"), value: contact.phone, href: contact.phoneHref },
-    { icon: Mail, label: t("emailLabel"), value: contact.email, href: `mailto:${contact.email}` },
+    {
+      icon: MapPin,
+      label: t("addressLabel"),
+      values: [{ value: contact.addressLines[locale].join(", "), href: undefined }],
+    },
+    { icon: Phone, label: t("phoneLabel"), values: [{ value: contact.phone, href: contact.phoneHref }] },
+    {
+      icon: Mail,
+      label: t("emailLabel"),
+      values: [
+        { value: contact.email, href: `mailto:${contact.email}` },
+        { value: contact.emailGeneral, href: `mailto:${contact.emailGeneral}` },
+      ],
+    },
   ];
 
   return (
@@ -38,13 +49,23 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             <div key={card.label} className={`border border-slate-200 bg-white p-7 ${cutCorner}`}>
               <card.icon className="text-accent-600" size={26} strokeWidth={1.5} />
               <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-slate-500">{card.label}</p>
-              {card.href ? (
-                <a href={card.href} className="mt-1.5 block text-sm font-medium text-ink-900 hover:text-accent-600">
-                  {card.value}
-                </a>
-              ) : (
-                <p className="mt-1.5 text-sm font-medium leading-relaxed text-ink-900">{card.value}</p>
-              )}
+              <div className="mt-1.5 space-y-1">
+                {card.values.map((item) =>
+                  item.href ? (
+                    <a
+                      key={item.value}
+                      href={item.href}
+                      className="block text-sm font-medium text-ink-900 hover:text-accent-600"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p key={item.value} className="text-sm font-medium leading-relaxed text-ink-900">
+                      {item.value}
+                    </p>
+                  )
+                )}
+              </div>
             </div>
           ))}
         </div>

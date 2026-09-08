@@ -28,6 +28,7 @@ export const contact = {
   phone: "+212 661 49 44 30",
   phoneHref: "tel:+212661494430",
   email: "f.nasri@fnpartners.ma",
+  emailGeneral: "contact@fnpartners.ma",
 };
 
 export const strengths: { title: Bilingual; description: Bilingual }[] = [
