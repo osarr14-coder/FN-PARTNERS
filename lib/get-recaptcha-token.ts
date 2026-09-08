@@ -13,10 +13,14 @@ export async function getRecaptchaToken(action: string): Promise<string | null> 
 
   return new Promise((resolve) => {
     window.grecaptcha!.ready(() => {
-      window
-        .grecaptcha!.execute(siteKey, { action })
-        .then(resolve)
-        .catch(() => resolve(null));
+      try {
+        window
+          .grecaptcha!.execute(siteKey, { action })
+          .then(resolve)
+          .catch(() => resolve(null));
+      } catch {
+        resolve(null);
+      }
     });
   });
 }
