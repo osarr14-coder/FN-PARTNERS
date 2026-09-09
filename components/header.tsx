@@ -26,7 +26,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center py-4">
-          <Image src="/images/fn-partners-logo.png" alt="FN Partners Consulting" width={460} height={225} className="h-9 w-auto sm:h-10" priority />
+          <Image src="/images/fn-partners-logo.png" alt="FN Partners Consulting" width={1860} height={800} className="h-9 w-auto sm:h-10" priority />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

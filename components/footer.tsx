@@ -24,8 +24,8 @@ export function Footer() {
           <Image
             src="/images/fn-partners-logo-white.png"
             alt={company.name}
-            width={460}
-            height={225}
+            width={1860}
+            height={800}
             className="h-9 w-auto"
           />
           <p className="mt-4 text-sm leading-relaxed text-slate-400">{tf("tagline")}</p>

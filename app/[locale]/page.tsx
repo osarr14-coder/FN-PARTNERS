@@ -78,8 +78,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
               <Image
                 src="/images/fn-partners-logo.png"
                 alt={company.name}
-                width={460}
-                height={225}
+                width={1860}
+                height={800}
                 className="h-12 w-auto sm:h-14"
               />
               <span className="font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">{company.name}</span>
