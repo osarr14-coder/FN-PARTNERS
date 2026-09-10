@@ -19,6 +19,9 @@ const SLIDES = [
   {
     src: "/images/carousel/digital-network.jpg",
     alt: "Représentation d'un réseau d'expertise reliant le Maroc et l'Afrique de l'Ouest",
+    // Les lueurs cuivrées de cette image tranchent avec l'identité violette
+    // du site — un léger voile de la teinte accent la ramène dans la gamme.
+    tint: true,
   },
 ];
 
@@ -39,17 +42,15 @@ export function ImageCarousel() {
       onMouseLeave={() => setPaused(false)}
     >
       {SLIDES.map((slide, i) => (
-        <Image
+        <div
           key={slide.src}
-          src={slide.src}
-          alt={slide.alt}
-          fill
-          priority={i === 0}
-          sizes="100vw"
-          className={`object-cover transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
-        />
+        >
+          <Image src={slide.src} alt={slide.alt} fill priority={i === 0} sizes="100vw" className="object-cover" />
+          {slide.tint && <div className="absolute inset-0 bg-ink-900/25 mix-blend-multiply" aria-hidden="true" />}
+        </div>
       ))}
       <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-6 flex justify-center gap-2">
