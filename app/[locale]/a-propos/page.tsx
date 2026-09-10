@@ -79,7 +79,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <section className="py-20 sm:py-28">
         <Container>
           <div
-            className={`grid grid-cols-1 items-center gap-10 border border-slate-200 bg-white p-8 sm:p-12 lg:grid-cols-[auto_1fr] ${cutCorner}`}
+            className={`grid grid-cols-1 items-center gap-10 border border-slate-200 bg-white p-8 sm:p-12 lg:grid-cols-[auto_1fr_auto] ${cutCorner}`}
           >
             <Image
               src="/images/fedoua-nasri.jpg"
@@ -105,6 +105,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   <ExternalLink size={16} strokeWidth={1.5} />
                 </a>
               </div>
+            </div>
+            <div className="shrink-0 border-t border-slate-200 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+              <Image
+                src="/images/logos/oec-morocco.png"
+                alt="Ordre des Experts Comptables"
+                width={700}
+                height={485}
+                className="h-14 w-auto sm:h-16"
+              />
+              <p className="mt-2 max-w-[13rem] text-xs font-medium leading-snug text-slate-500">{t("oecBadge")}</p>
             </div>
           </div>
         </Container>
