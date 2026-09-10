@@ -16,7 +16,7 @@ export async function PresenceMap({ locale }: { locale: Locale }) {
 
   return (
     <div>
-      <div className="relative mx-auto max-w-sm lg:mx-0">
+      <div className="relative mx-auto max-w-sm">
         <svg viewBox={`${cropX} ${cropY} ${cropW} ${cropH}`} className="w-full" aria-hidden="true">
           <path d={AFRICA_PATH} className="fill-white/10" stroke="white" strokeOpacity={0.2} strokeWidth={1.5} />
         </svg>
@@ -47,7 +47,7 @@ export async function PresenceMap({ locale }: { locale: Locale }) {
         })}
       </div>
       {otherCountries.length > 0 && (
-        <p className="mt-6 text-center text-sm text-slate-400 lg:text-left">
+        <p className="mt-6 text-center text-sm text-slate-400">
           {t("alsoIn")} {otherCountries.map((c) => c[locale]).join(", ")}
         </p>
       )}

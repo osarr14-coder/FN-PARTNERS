@@ -112,16 +112,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       <section className="relative overflow-hidden bg-ink-950 py-20 sm:py-28">
         <ChevronMotif />
-        <Container className="relative grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
-          <div>
-            <SectionHeading eyebrow="International" title={t("geographyTitle")} light />
-            <div className="mt-10">
-              <ButtonLink href="/devis" variant="accent">
-                {tc("requestQuote")}
-              </ButtonLink>
-            </div>
+        <Container className="relative">
+          <SectionHeading eyebrow="International" title={t("geographyTitle")} light />
+          <div className="mt-10">
+            <PresenceMap locale={locale} />
           </div>
-          <PresenceMap locale={locale} />
+          <div className="mt-10">
+            <ButtonLink href="/devis" variant="accent">
+              {tc("requestQuote")}
+            </ButtonLink>
+          </div>
         </Container>
       </section>
     </>
