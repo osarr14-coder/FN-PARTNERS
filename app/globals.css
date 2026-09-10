@@ -85,3 +85,22 @@ h1, h2, h3, h4 {
   }
 }
 
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 18s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns {
+    animation: none;
+  }
+}
+

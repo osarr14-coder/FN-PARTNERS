@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { ButtonLink } from "@/components/button";
 import { ChevronMotif } from "@/components/chevron-motif";
 import { DossierTag, cutCorner } from "@/components/dossier-tag";
+import { PresenceMap } from "@/components/presence-map";
 import { company, founder, geography, servicePoles, values } from "@/content/company";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -113,16 +114,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <ChevronMotif />
         <Container className="relative">
           <SectionHeading eyebrow="International" title={t("geographyTitle")} light />
-          <div className="mt-8 flex flex-wrap gap-3">
-            {geography.map((country) => (
-              <span
-                key={country.fr}
-                className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-200"
-              >
-                {country[locale]}
-              </span>
-            ))}
-          </div>
+          <PresenceMap locale={locale} />
           <div className="mt-10">
             <ButtonLink href="/devis" variant="accent">
               {tc("requestQuote")}

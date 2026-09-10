@@ -28,6 +28,7 @@ import { ButtonLink } from "@/components/button";
 import { JsonLd } from "@/components/json-ld";
 import { ChevronMotif } from "@/components/chevron-motif";
 import { DossierTag, cutCorner } from "@/components/dossier-tag";
+import { PresenceMap } from "@/components/presence-map";
 import { company, contact, geography, practiceAreas, servicePoles, strengths } from "@/content/company";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata, siteUrl } from "@/lib/seo";
@@ -210,19 +211,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       </section>
 
       <section className="relative overflow-hidden bg-ink-950 py-20 sm:py-28">
+        <Image
+          src="/images/office-analysis.jpg"
+          alt=""
+          fill
+          className="animate-kenburns object-cover opacity-20"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-ink-950/70" aria-hidden="true" />
         <ChevronMotif variant="quiet" />
         <Container className="relative">
           <SectionHeading eyebrow="International" title={t("geographyTitle")} subtitle={t("geographySubtitle")} light />
-          <div className="mt-8 flex flex-wrap gap-3">
-            {geography.map((country) => (
-              <span
-                key={country.fr}
-                className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-200"
-              >
-                {country[locale]}
-              </span>
-            ))}
-          </div>
+          <PresenceMap locale={locale} />
         </Container>
       </section>
 
