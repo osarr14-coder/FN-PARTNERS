@@ -1,7 +1,26 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Award, Database, GraduationCap, Landmark, Layers3, Settings2, ShieldCheck, TrendingUp, Users2 } from "lucide-react";
+import {
+  Award,
+  Building2,
+  Calculator,
+  ClipboardCheck,
+  Database,
+  FileCheck2,
+  GraduationCap,
+  Landmark,
+  Layers3,
+  LineChart,
+  PieChart,
+  Scale,
+  ScrollText,
+  SearchCheck,
+  Settings2,
+  ShieldCheck,
+  TrendingUp,
+  Users2,
+} from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
@@ -9,12 +28,24 @@ import { ButtonLink } from "@/components/button";
 import { JsonLd } from "@/components/json-ld";
 import { ChevronMotif } from "@/components/chevron-motif";
 import { DossierTag, cutCorner } from "@/components/dossier-tag";
-import { company, contact, geography, servicePoles, strengths, trustedClients } from "@/content/company";
+import { company, contact, geography, practiceAreas, servicePoles, strengths } from "@/content/company";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata, siteUrl } from "@/lib/seo";
 
 const strengthIcons = [Award, Users2, Database, GraduationCap, TrendingUp, Layers3];
 const poleIcons = [Landmark, ShieldCheck, Settings2];
+const practiceIcons = [
+  ShieldCheck,
+  FileCheck2,
+  SearchCheck,
+  ScrollText,
+  ClipboardCheck,
+  Calculator,
+  PieChart,
+  LineChart,
+  Scale,
+  Building2,
+];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -139,23 +170,28 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         </Container>
       </section>
 
-      <section className="py-20 sm:py-28">
+      <section className="overflow-hidden py-20 sm:py-28">
         <Container>
-          <SectionHeading title={t("referencesTitle")} align="center" />
-          <div className="mt-12 grid grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
-            {trustedClients.map((client) => (
-              <div key={client.name} className="flex items-center justify-center">
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={200}
-                  height={100}
-                  className="h-12 w-auto max-w-[140px] object-contain opacity-75 transition-opacity hover:opacity-100 sm:h-14"
-                />
-              </div>
-            ))}
-          </div>
+          <SectionHeading title={t("practiceTitle")} subtitle={t("practiceSubtitle")} align="center" />
         </Container>
+        <div className="relative mt-12">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent sm:w-32" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent sm:w-32" />
+          <div className="flex w-max gap-5 animate-marquee">
+            {[...practiceAreas, ...practiceAreas].map((area, i) => {
+              const Icon = practiceIcons[i % practiceAreas.length];
+              return (
+                <div
+                  key={i}
+                  className={`flex w-64 shrink-0 items-center gap-3 border border-slate-200 bg-white p-5 ${cutCorner}`}
+                >
+                  <Icon className="shrink-0 text-accent-600" size={24} strokeWidth={1.5} />
+                  <span className="text-sm font-medium text-ink-900">{area.label[locale]}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </section>
 
       <section className="relative overflow-hidden bg-ink-950 py-20 sm:py-28">

@@ -323,9 +323,9 @@ export const servicePoles: ServicePole[] = [
   },
 ];
 
-// Logos affichés en bandeau sur la page d'accueil, section "Ils nous font
-// confiance" — liste fournie directement par le cabinet, sans détail de
-// mission (voir `sectors` ci-dessus pour les références commentées).
+// Ancien bandeau de logos clients de la page d'accueil — retiré à la demande
+// du cabinet (confidentialité des missions), remplacé par `practiceAreas`
+// ci-dessous. Conservé ici sans être affiché, au cas où.
 export const trustedClients: { name: string; logo: string }[] = [
   { name: "Groupe ADDOHA", logo: "/images/logos/trusted/addoha.png" },
   { name: "Ciments de l'Atlas", logo: "/images/logos/trusted/cimat.png" },
@@ -339,6 +339,21 @@ export const trustedClients: { name: string; logo: string }[] = [
   { name: "Bosch", logo: "/images/logos/trusted/bosch.png" },
   { name: "Bosch Rexroth", logo: "/images/logos/trusted/rexroth.png" },
   { name: "MOL — Mining Operations Lab", logo: "/images/logos/trusted/mol.png" },
+];
+
+// Bandeau défilant de la page d'accueil, en remplacement du mur de logos
+// clients — domaines d'intervention génériques, sans référence à un client.
+export const practiceAreas: { label: Bilingual }[] = [
+  { label: { fr: "Audit contractuel", en: "Contractual audit" } },
+  { label: { fr: "Certification des comptes", en: "Financial statement certification" } },
+  { label: { fr: "Due diligence", en: "Due diligence" } },
+  { label: { fr: "Consolidation IFRS", en: "IFRS consolidation" } },
+  { label: { fr: "Contrôle interne", en: "Internal control" } },
+  { label: { fr: "Évaluation d'entreprises", en: "Business valuation" } },
+  { label: { fr: "Reporting financier", en: "Financial reporting" } },
+  { label: { fr: "Planification financière", en: "Financial planning" } },
+  { label: { fr: "Conformité réglementaire", en: "Regulatory compliance" } },
+  { label: { fr: "Gouvernance d'entreprise", en: "Corporate governance" } },
 ];
 
 export const founder = {
