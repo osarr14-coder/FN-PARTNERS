@@ -88,26 +88,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       <section className="relative overflow-hidden bg-ink-950">
         <ChevronMotif />
         <Container className="relative py-16 sm:py-20">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <DossierTag light>{t("heroEyebrow")}</DossierTag>
-              <h1 className="mt-3 max-w-2xl text-balance font-heading text-5xl font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl">
-                {company.tagline[locale]}
-              </h1>
-            </div>
-            <div
-              className={`inline-flex max-w-[16rem] shrink-0 items-center gap-2.5 self-start bg-white/95 py-2.5 pl-3 pr-4 shadow-[0_1px_1px_rgba(255,255,255,0.4)_inset,0_12px_32px_-6px_rgba(153,0,255,0.55)] ring-1 ring-white/40 sm:max-w-[15rem] sm:self-center sm:gap-3 ${cutCorner}`}
-            >
-              <Image
-                src="/images/logos/oec-morocco.png"
-                alt="Ordre des Experts Comptables"
-                width={700}
-                height={485}
-                className="h-9 w-auto shrink-0 sm:h-11"
-              />
-              <p className="text-xs font-medium leading-snug text-ink-900 sm:text-sm">{t("oecBadge")}</p>
-            </div>
-          </div>
+          <DossierTag light>{t("heroEyebrow")}</DossierTag>
+          <h1 className="mt-3 max-w-2xl text-balance font-heading text-5xl font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl">
+            {company.tagline[locale]}
+          </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">{t("heroLead")}</p>
 
           <div className="mt-8 flex flex-wrap gap-4">
