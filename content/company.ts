@@ -27,8 +27,8 @@ export const contact = {
   } satisfies { fr: string[]; en: string[] },
   phone: "+212 661 49 44 30",
   phoneHref: "tel:+212661494430",
-  email: "f.nasri@fnpartners.ma",
-  emailGeneral: "contact@fnpartners.ma",
+  email: "contact@fnpartners.ma",
+  emailFounder: "f.nasri@fnpartners.ma",
 };
 
 export const strengths: { title: Bilingual; description: Bilingual }[] = [

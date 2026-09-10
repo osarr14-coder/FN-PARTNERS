@@ -111,7 +111,15 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       <section className="relative overflow-hidden bg-ink-950 py-20 sm:py-28">
-        <ChevronMotif />
+        <Image
+          src="/images/office-analysis.jpg"
+          alt=""
+          fill
+          className="animate-kenburns object-cover opacity-20"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-ink-950/70" aria-hidden="true" />
+        <ChevronMotif variant="quiet" />
         <Container className="relative">
           <SectionHeading eyebrow="International" title={t("geographyTitle")} light />
           <div className="mt-10">

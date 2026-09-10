@@ -128,6 +128,7 @@
     "title": "News",
     "subtitle": "Insights, regulatory updates, and perspectives from our team.",
     "empty": "No articles published yet.",
+    "emptyCtaLead": "A question about one of these topics?",
     "publishedOn": "Published on",
     "backToList": "Back to news"
   },

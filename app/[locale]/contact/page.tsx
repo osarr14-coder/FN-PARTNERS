@@ -34,7 +34,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       label: t("emailLabel"),
       values: [
         { value: contact.email, href: `mailto:${contact.email}` },
-        { value: contact.emailGeneral, href: `mailto:${contact.emailGeneral}` },
+        { value: contact.emailFounder, href: `mailto:${contact.emailFounder}` },
       ],
     },
   ];

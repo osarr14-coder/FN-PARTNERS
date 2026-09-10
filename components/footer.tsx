@@ -63,8 +63,8 @@ export function Footer() {
                 <a href={`mailto:${contact.email}`} className="hover:text-white">
                   {contact.email}
                 </a>
-                <a href={`mailto:${contact.emailGeneral}`} className="hover:text-white">
-                  {contact.emailGeneral}
+                <a href={`mailto:${contact.emailFounder}`} className="hover:text-white">
+                  {contact.emailFounder}
                 </a>
               </span>
             </li>

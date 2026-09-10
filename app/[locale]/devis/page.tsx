@@ -75,11 +75,11 @@ export default async function QuotePage({ params }: { params: Promise<{ locale: 
                 {contact.email}
               </a>
               <a
-                href={`mailto:${contact.emailGeneral}`}
+                href={`mailto:${contact.emailFounder}`}
                 className="flex items-center gap-2.5 transition-colors hover:text-white"
               >
                 <Mail size={16} className="shrink-0 text-accent-500" />
-                {contact.emailGeneral}
+                {contact.emailFounder}
               </a>
             </div>
           </div>

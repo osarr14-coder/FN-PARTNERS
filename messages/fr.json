@@ -128,6 +128,7 @@
     "title": "Actualités",
     "subtitle": "Analyses, actualités réglementaires et retours d'expérience de notre équipe.",
     "empty": "Aucun article publié pour le moment.",
+    "emptyCtaLead": "Une question sur l'un de ces sujets ?",
     "publishedOn": "Publié le",
     "backToList": "Retour aux actualités"
   },
