@@ -138,6 +138,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                 height={485}
                 className="h-14 w-auto sm:h-16"
               />
+              <p className="mt-2 max-w-[13rem] text-xs font-medium leading-snug text-slate-500">{t("oecBadge")}</p>
             </div>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
