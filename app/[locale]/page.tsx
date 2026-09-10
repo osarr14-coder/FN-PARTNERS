@@ -125,9 +125,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
       <section className="py-20 sm:py-28">
         <Container>
-          <div className="max-w-2xl">
-            <span className="font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">{company.name}</span>
-            <p className="mt-3 leading-relaxed text-slate-600">{t("strengthsSubtitle")}</p>
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-2xl">
+              <span className="font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">{company.name}</span>
+              <p className="mt-3 leading-relaxed text-slate-600">{t("strengthsSubtitle")}</p>
+            </div>
+            <div className="shrink-0 sm:border-l sm:border-slate-200 sm:pl-8">
+              <Image
+                src="/images/logos/oec-morocco.png"
+                alt="Ordre des Experts Comptables"
+                width={700}
+                height={485}
+                className="h-14 w-auto sm:h-16"
+              />
+            </div>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {strengths.map((item, i) => {
