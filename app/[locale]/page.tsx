@@ -220,7 +220,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         />
         <div className="absolute inset-0 bg-ink-950/70" aria-hidden="true" />
         <ChevronMotif variant="quiet" />
-        <Container className="relative">
+        <Container className="relative grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
           <SectionHeading eyebrow="International" title={t("geographyTitle")} subtitle={t("geographySubtitle")} light />
           <PresenceMap locale={locale} />
         </Container>
