@@ -86,7 +86,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       <section className="relative overflow-hidden bg-ink-950">
         <ChevronMotif />
         <Container className="relative py-16 sm:py-20">
-          <div className="absolute right-0 top-0 inline-flex max-w-[16rem] items-center gap-2.5 rounded-xl bg-white/95 py-2.5 pl-3 pr-4 shadow-lg sm:max-w-[19rem] sm:gap-3">
+          <div className="relative mb-6 inline-flex max-w-[16rem] items-center gap-2.5 rounded-xl bg-white/95 py-2.5 pl-3 pr-4 shadow-lg sm:absolute sm:right-0 sm:top-0 sm:mb-0 sm:max-w-[19rem] sm:gap-3">
             <Image
               src="/images/logos/oec-morocco.png"
               alt="Ordre des Experts Comptables"
