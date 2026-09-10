@@ -91,7 +91,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
             {company.tagline[locale]}
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">{t("heroLead")}</p>
-          <div className="mt-8 flex flex-wrap gap-4">
+
+          <div className="mt-7 inline-flex items-center gap-3 rounded-xl bg-white/95 py-2.5 pl-3 pr-4 shadow-lg">
+            <Image
+              src="/images/logos/oec-morocco.png"
+              alt="Ordre des Experts Comptables"
+              width={700}
+              height={485}
+              className="h-10 w-auto shrink-0 sm:h-12"
+            />
+            <p className="max-w-[15rem] text-xs font-medium leading-snug text-ink-900 sm:text-sm">
+              {t("oecBadge")}
+            </p>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-4">
             <ButtonLink href="/devis" variant="accent">
               {tc("requestQuote")}
             </ButtonLink>
