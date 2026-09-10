@@ -96,7 +96,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
               </h1>
             </div>
             <div
-              className={`inline-flex max-w-[16rem] shrink-0 items-center gap-2.5 self-start bg-white/95 py-2.5 pl-3 pr-4 shadow-lg sm:max-w-[15rem] sm:self-center sm:gap-3 ${cutCorner}`}
+              className={`inline-flex max-w-[16rem] shrink-0 items-center gap-2.5 self-start bg-white/95 py-2.5 pl-3 pr-4 shadow-[0_1px_1px_rgba(255,255,255,0.4)_inset,0_12px_32px_-6px_rgba(153,0,255,0.55)] ring-1 ring-white/40 sm:max-w-[15rem] sm:self-center sm:gap-3 ${cutCorner}`}
             >
               <Image
                 src="/images/logos/oec-morocco.png"
