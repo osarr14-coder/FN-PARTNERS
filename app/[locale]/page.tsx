@@ -95,7 +95,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                 {company.tagline[locale]}
               </h1>
             </div>
-            <div className="inline-flex max-w-[16rem] shrink-0 items-center gap-2.5 self-start rounded-xl bg-white/95 py-2.5 pl-3 pr-4 shadow-lg sm:max-w-[15rem] sm:self-center sm:gap-3">
+            <div
+              className={`inline-flex max-w-[16rem] shrink-0 items-center gap-2.5 self-start bg-white/95 py-2.5 pl-3 pr-4 shadow-lg sm:max-w-[15rem] sm:self-center sm:gap-3 ${cutCorner}`}
+            >
               <Image
                 src="/images/logos/oec-morocco.png"
                 alt="Ordre des Experts Comptables"
