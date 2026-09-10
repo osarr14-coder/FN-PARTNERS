@@ -29,6 +29,7 @@ import { JsonLd } from "@/components/json-ld";
 import { ChevronMotif } from "@/components/chevron-motif";
 import { DossierTag, cutCorner } from "@/components/dossier-tag";
 import { PresenceMap } from "@/components/presence-map";
+import { ImageCarousel } from "@/components/image-carousel";
 import { company, contact, geography, practiceAreas, servicePoles, strengths } from "@/content/company";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata, siteUrl } from "@/lib/seo";
@@ -118,19 +119,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         </Container>
       </section>
 
+      <ImageCarousel />
+
       <section className="py-20 sm:py-28">
         <Container>
           <div className="max-w-2xl">
-            <div className="flex items-center gap-4">
-              <Image
-                src="/images/fn-partners-logo.png"
-                alt={company.name}
-                width={1860}
-                height={800}
-                className="h-12 w-auto sm:h-14"
-              />
-              <span className="font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">{company.name}</span>
-            </div>
+            <span className="font-heading text-3xl font-semibold text-ink-950 sm:text-4xl">{company.name}</span>
             <p className="mt-3 leading-relaxed text-slate-600">{t("strengthsSubtitle")}</p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
